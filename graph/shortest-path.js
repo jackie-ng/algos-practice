@@ -6,19 +6,22 @@ If there is no path between A and B, then return -1. */
 const shortestPath = (edges, nodeA, nodeB) => {
   const graph = buildGraph(edges);
   // console.log(graph);
-  const queue = [[ nodeA, 0]];
-
+  const visited = new Set([ nodeA ]);
+  const queue = [[ nodeA, 0 ]]; //store the node + the distance, by the time we will increment the distance
   while (queue.length > 0) {
     const [ node, distance ] = queue.shift();
 
-    if (node === nodeB) return distance;
+    if (node === nodeB) return distance; //found the path, return distance
 
     for (let neighbor of graph[node]) {
-      queue.push([ neighbor, distance + 1])
+      if (!visited.has(neighbor)) { //if visited doesn't have neighbor, add the neighbor into visited Set
+        visited.add(neighbor);
+        queue.push([ neighbor, distance + 1]);
+      }
     }
   }
   return -1;
-}
+};
 
 const buildGraph = (edges) => {
   const graph = {};
