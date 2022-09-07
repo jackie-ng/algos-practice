@@ -1,13 +1,19 @@
-/**Write a function, hasCycle, that takes in an object representing the adjacency list of a directed graph. The function should return a boolean indicating whether or not the graph contains a cycle. */
-const hasCycle = (graph) => {
+/**Write a function, prereqsPossible, that takes in a number of courses (n) and prerequisites as arguments. Courses have ids ranging from 0 through n - 1. A single prerequisite of [A, B] means that course A must be taken before course B. The function should return a boolean indicating whether or not it is possible to complete all courses. */
+const prereqsPossible = (numCourses, prereqs) => {
+  const visiting = new Set();
   const visited = new Set();
-  for (let startNode in graph) {
-    if (cycleDetect(graph, startNode, new Set(), visited)) return true;
+
+  const graph = buildGraph(numCourses, prereqs);
+  for (let node in graph) {
+    if (hasCycle(graph, node, visiting, visited)) {
+      return false;
+    }
   }
-  return false;
+
+  return true;
 };
 
-const cycleDetect = (graph, node, visiting, visited) => {
+const hasCycle = (graph, node, visiting, visited) => {
   if (visited.has(node)) return false;
 
   if (visiting.has(node)) return true;
@@ -15,49 +21,74 @@ const cycleDetect = (graph, node, visiting, visited) => {
   visiting.add(node);
 
   for (let neighbor of graph[node]) {
-    if (cycleDetect(graph, neighbor, visiting, visited)) return true;
+    if (hasCycle(graph, neighbor, visiting, visited)) {
+      return true;
+    }
   }
 
   visiting.delete(node);
   visited.add(node);
+
   return false;
 };
 
-/**
-n = number of nodes
-Time: O(n^2)
-Space: O(n)
- */
+const buildGraph = (numCourses, prereqs) => {
+  const graph = {};
+
+  for (let i = 0; i < numCourses; i += 1) {
+    graph[i] = [];
+  }
+
+  for (let prereq of prereqs) {
+    const [a, b] = prereq;
+    graph[a].push(String(b));
+  }
+
+  return graph;
+};
+// p = # prereqs
+// n = # courses
+// Time: O(n + p)
+// Space: O(n)
 
 /**test_00:
-hasCycle({
-  a: ["b"],
-  b: ["c"],
-  c: ["a"],
-}); // -> true
+const numCourses = 6;
+const prereqs = [
+  [0, 1],
+  [2, 3],
+  [0, 2],
+  [1, 3],
+  [4, 5],
+];
+prereqsPossible(numCourses, prereqs); // -> true
 test_01:
-hasCycle({
-  a: ["b", "c"],
-  b: ["c"],
-  c: ["d"],
-  d: [],
-}); // -> false
+const numCourses = 6;
+const prereqs = [
+  [0, 1],
+  [2, 3],
+  [0, 2],
+  [1, 3],
+  [4, 5],
+  [3, 0],
+];
+prereqsPossible(numCourses, prereqs); // -> false
 test_02:
-hasCycle({
-  a: ["b", "c"],
-  b: [],
-  c: [],
-  e: ["f"],
-  f: ["e"],
-}); // -> true
+const numCourses = 5;
+const prereqs = [
+  [2, 4],
+  [1, 0],
+  [0, 2],
+  [0, 4],
+];
+prereqsPossible(numCourses, prereqs); // -> true
 test_03:
-hasCycle({
-  q: ["r", "s"],
-  r: ["t", "u"],
-  s: [],
-  t: [],
-  u: [],
-  v: ["w"],
-  w: [],
-  x: ["w"],
-}); // -> false */
+const numCourses = 6;
+const prereqs = [
+  [2, 4],
+  [1, 0],
+  [0, 2],
+  [0, 4],
+  [5, 3],
+  [3, 5],
+];
+prereqsPossible(numCourses, prereqs); // -> false */
