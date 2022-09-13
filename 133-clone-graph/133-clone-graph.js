@@ -11,20 +11,16 @@
  * @return {Node}
  */
 
-/*https://leetcode.com/problems/clone-graph/discuss/1416436/Javascript-DFS-%2B-Hashmap-(Thought-Process)*/
+var cloneGraph = function (graph) {
+  var map = {};
+  return traverse(graph);
 
-var cloneGraph = function(node, copy = new Map()) {
-    // Handle null case
-    if (!node) return null;
-        
-    // If our graph hasn't already copied the input node
-    if (!copy.has(node.val)) {
-        // Create new copy node (+ reference in map)
-        copy.set(node.val, new Node(node.val));
-        // Recursively clone neighbors
-        copy.get(node.val).neighbors = node.neighbors.map((neighbor) => cloneGraph(neighbor, copy));
+  function traverse(node) {
+    if (!node) return node;
+    if (!map[node.val]) {
+      map[node.val] = new Node(node.val);
+      map[node.val].neighbors = node.neighbors.map(traverse);
     }
-        
-    // Return copied/new node (* not * the original node passed in)
-    return copy.get(node.val);
-};
+    return map[node.val];
+  }
+}
