@@ -15,43 +15,48 @@ Output:
 [["John","john00@mail.com","john_newyork@mail.com","johnsmith@mail.com"],
  ["Mary","mary@mail.com"],
  ["John","johnnybravo@mail.com"]]*/
-/*Union Find*/
-var accountsMerge = function (accounts) {
-    const parents = {};
-    const email2name = {};
-
-    const find = (x) => {
-        if (parents[x] !== x) {
-            parents[x] = find(parents[x]);
-        }
-
-        return parents[x];
-    };
-
-    const union = (x, y) => {
-        parents[find(x)] = find(y);
-    };
-
-    for (const [name, ...emails] of accounts) {
-        for (const email of emails) {
-            if (!parents[email]) {
-                parents[email] = email;
+/*DFS*/
+var accountsMerge = function(accounts) {  
+    
+    let graph = {};
+    let nameDict = {};
+    
+    for (let acc of accounts) {
+        let name = acc[0];
+        nameDict[acc[1]] = name;
+        for (let i=1;i<acc.length;i++) {
+            if (!graph[acc[i]]) graph[acc[i]] = new Set();
+            nameDict[acc[i]] = name;
+            if (i != 1) {
+                graph[acc[1]].add(acc[i]);
+                graph[acc[i]].add(acc[1]);
             }
-
-            email2name[email] = name;
-            union(email, emails[0]);
         }
     }
-
-    const emails = {};
-    for (const email of Object.keys(parents)) {
-        const parent = find(email);
-        if (parent in emails) {
-            emails[parent].push(email);
-        } else {
-            emails[parent] = [email];
+    
+    let res = [];
+    let visited = new Set();
+    
+    let dfs = function (key) {
+        visited.add(key);
+        let emails = [key];
+        graph[key].forEach((e)=>{
+            if (!visited.has(e)) {
+                emails.push(...dfs(e));
+            }
+        })
+            
+        return emails;
+    }
+    
+    for (let key in graph) {
+        if (!visited.has(key)) {
+            let temp = dfs(key);
+            temp.sort();
+            temp.unshift(nameDict[temp[0]]);
+            res.push(temp);
         }
     }
-
-    return Object.entries(emails).map(([email, x]) => [email2name[email], ...x.sort()]);
+    
+    return res;
 };
