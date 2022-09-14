@@ -3,38 +3,34 @@
  * @param {string} word
  * @return {boolean}
  */
-// Helper Func
-const isOutOfBound = (board, row, col) => row < 0 || row >= board.length || col < 0 || col >= board[0].length;
+const exist = (board, word) => {
+  if (board.length === 0) return false;
 
-const checkNeighbors = (board, word, row, col) => {
-    // Check exit conditions
-    if (!word.length) return true;
-    if (isOutOfBound(board, row, col) || board[row][col] !== word[0]) return false;
-    
-    // Save some stuff
-    const curChar = board[row][col];
-    const newWord = word.substr(1);
+  const h = board.length;
+  const w = board[0].length;
+  const dirs = [[-1, 0], [0, 1], [1, 0], [0, -1]];
 
-    board[row][col] = 0; // Disable the current character
-    
-    // Check if neighbors are fruitful
-    const results = checkNeighbors(board, newWord, row + 1, col) ||
-        checkNeighbors(board, newWord, row - 1, col) ||
-        checkNeighbors(board, newWord, row, col + 1) ||
-        checkNeighbors(board, newWord, row, col - 1);
+  const go = (x, y, k) => {
+    if (board[x][y] !== word[k]) return false;
+    if (k === word.length - 1) return true;
 
-    // Enable current character
-    board[row][col] = curChar;
-
-    return results;
-};
-
-
-var exist = function(board, word) {    
-    for (let row = 0; row < board.length; row++) {
-        for (let col  = 0; col < board[0].length; col++) {
-            if (checkNeighbors(board, word, row, col)) return true;
-        }
+    board[x][y] = '*'; // mark as visited
+    for (const [dx, dy] of dirs) {
+      const i = x + dx;
+      const j = y + dy;
+      if (i >= 0 && i < h && j >= 0 && j < w) {
+        if (go(i, j, k + 1)) return true;
+      }
     }
+    board[x][y] = word[k]; // reset
     return false;
+  };
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < w; j++) {
+      if (go(i, j, 0)) return true;
+    }
+  }
+
+  return false;
 };
