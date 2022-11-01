@@ -3,42 +3,36 @@
  * @return {number}
  */
 
-const numIslands =  (grid) => {
-	let count = 0 // the counted islands
-	//Go though each cell of the 2d array/grid 
-	for(let row = 0; row < grid.length; row++){
-        for(let col = 0; col < grid[row].length; col ++){
-            if(grid[row][col] == '1'){
-                count ++
-                explore(row, col, grid)
-             }
-         }
+
+const numIslands = (grid) => {
+  const visited = new Set();
+  
+  let count = 0;
+  for (let r = 0; r < grid.length; r += 1) {
+    for (let c = 0; c < grid[0].length; c += 1) {
+      if (explore(grid, r, c, visited) === true) {
+        count += 1;
+      }
     }
-    return count
-}
+  }
+  
+  return count;
+};
 
-
-
-// Takes a cell in a grid with a “1” , turns it into a “0” and explores (DFS) any of the left, right, up, down 1’s
-function explore(row, col, grid){
-     if (row < 0 || col < 0 || row >= grid.length  
-         || col >= grid[row].length || grid[row][col] === '0')  {
-        return
-    }
-    
-    //Otherwise, we should explore it!
-    //First let's set the current spot to "0"
-    grid[row][col] ='0'
-    
-	//Possibilites:
-	// 1) 1 to the right, left, top, bottom
-	//right
-	explore(row, col+1, grid)   
-    //Left
-	explore(row, col-1, grid)  
-    //Down
-	explore(row+1, col, grid) 
-    //Up
-	explore(row-1, col, grid)   
-
-}
+const explore = (grid, r, c, visited) => {
+  const rowInbounds = 0 <= r && r < grid.length;
+  const colInbounds = 0 <= c && c < grid[0].length;
+  if (!rowInbounds || !colInbounds) return false;
+  
+  if (grid[r][c] === '0') return false;
+  
+  const pos = r + ',' + c;
+  if (visited.has(pos)) return false;
+  visited.add(pos);
+  
+  explore(grid, r - 1, c, visited);
+  explore(grid, r + 1, c, visited);
+  explore(grid, r, c - 1, visited);
+  explore(grid, r, c + 1, visited);
+  return true;
+};
