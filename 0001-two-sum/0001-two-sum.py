@@ -1,39 +1,36 @@
-# class Solution:
-#     def twoSum(self, nums: List[int], target: int) -> List[int]:
-#         hashmap = {}
-#         for i in range(len(nums)):
-#             hashmap[nums[i]] = i
-#         for i in range(len(nums)):
-#             complement = target - nums[i]
-#             if complement in hashmap and hashmap[complement] != i:
-#                 return [i, hashmap[complement]] 
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:        
-        n = len(nums)
-        a = nums.copy()
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {} #value: index
+        for i in range(len(nums)):
+            hashmap[nums[i]] = i
+        print(hashmap)
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in hashmap and hashmap[complement] != i:
+                return [i, hashmap[complement]] 
 
-        nums.sort()
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:        
+#         copy_nums = nums.copy()
+        
+#         left = 0
+#         right = len(nums) - 1
+        
+#         while left < right:
+#             sum = nums[left] + nums[right]
 
-        l = 0
-        r = n - 1
-
-        while l < r:
-            sum = nums[l] + nums[r]
-
-            if sum == target:
-                break
-            elif sum > target:
-                r -= 1
-            else:
-                l += 1
-
-        v = []
-
-        for i in range(n):
-            if nums[l] == a[i]:
-                v.append(i)
-            elif nums[r] == a[i]:
-                v.append(i)
-
-        return v
+#             if sum == target:
+#                 break
+#             elif sum > target:
+#                 right -= 1
+#             else:
+#                 left += 1
+                
+#         result = []
+#         for i in range(len(nums)):
+#             if nums[left] == copy_nums[i]:
+#                 result.append(i)
+#             elif nums[right] == copy_nums[i]:
+#                 result.append(i)
+                
+#         return result
