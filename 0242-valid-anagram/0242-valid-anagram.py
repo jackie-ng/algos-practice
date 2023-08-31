@@ -5,7 +5,7 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        # build 2 hash maps
+        # build 2 hash maps: O(s + t), O(1)
         if len(s) != len(t):
             return False
         
