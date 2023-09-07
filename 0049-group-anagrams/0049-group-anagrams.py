@@ -25,3 +25,6 @@ class Solution:
             else:
                 d[x].append(strs[i])
         return d.values()
+    
+# Time Complexity — O(n*len(array item))
+# Space Complexity — O(n)
