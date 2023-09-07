@@ -19,6 +19,7 @@ class Solution:
         d = {}
         
         for i in range(len(strs)):
+            print(sorted(strs[i]))
             x = ''.join(sorted(strs[i]))
             if x not in d:
                 d[x] = [strs[i]]
