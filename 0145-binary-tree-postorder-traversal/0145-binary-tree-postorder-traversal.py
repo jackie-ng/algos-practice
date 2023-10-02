@@ -19,6 +19,7 @@ class Solution:
 #         return res
     
         res, stack = [], [(root, False)]
+        print(stack)
         while stack:
             node, visited = stack.pop()  # the last element
             if node:
