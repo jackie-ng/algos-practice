@@ -38,8 +38,10 @@ class Solution:
             while stack:
                 cur = stack.pop()
                 if cur:
-                    cur.left, cur.right = cur.right, cur.left
-                    
+                    # cur.left, cur.right = cur.right, cur.left
+                    tmp = cur.left
+                    cur.left = cur.right
+                    cur.right = tmp
                     stack.append(cur.right)
                     stack.append(cur.left)
                 
