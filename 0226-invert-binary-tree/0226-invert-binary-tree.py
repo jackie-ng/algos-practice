@@ -17,18 +17,30 @@ class Solution:
 #         self.invertTree(root.left)
 #         self.invertTree(root.right)
 #         return root
-        if not root:
-            return None
-        queue = collections.deque([root])
+
+#         if not root:
+#             return None
+#         queue = collections.deque([root])
         
-        while queue:
-            current = queue.popleft()
-            current.left, current.right = current.right, current.left
+#         while queue:
+#             current = queue.popleft()
+#             current.left, current.right = current.right, current.left
             
-            if current.left:
-                queue.append(current.left)
+#             if current.left:
+#                 queue.append(current.left)
                 
-            if current.right:
-                queue.append(current.right)
+#             if current.right:
+#                 queue.append(current.right)
                 
-        return root
+#         return root
+
+            stack = [root]
+            while stack:
+                cur = stack.pop()
+                if cur:
+                    cur.left, cur.right = cur.right, cur.left
+                    
+                    stack.append(cur.right)
+                    stack.append(cur.left)
+                
+            return root
