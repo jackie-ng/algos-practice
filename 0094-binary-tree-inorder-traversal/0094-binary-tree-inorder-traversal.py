@@ -16,18 +16,7 @@ class Solution:
                 
 #         inOrder(root)
 #         return res
-#         res = []
-#         stack = [root]
-        
-#         while stack:
-#             curr_node = stack.pop()
-#             if curr_node:
-#                 stack.append(curr_node.right)
-#                 res.append(curr_node.val)
-#                 stack.append(curr_node.left)
-                
-#         return res
-    
+   
 
         res, stack = [], [(root, False)]
         while stack:
