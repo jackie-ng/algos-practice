@@ -10,11 +10,15 @@ class Solution:
         def dfs(root):
             if not root: 
                 return [True, 0]
-            # determine if left and right subtree are balance
+            # Check subtrees to see if they are balanced. 
             left, right = dfs(root.left), dfs(root.right)
             # balanced if the left subtree, the right subtree and the root are balanced
             balanced = (left[0] and right[0] and abs(left[1] - right[1]) <= 1)
             
+            # If the subtrees are balanced, check if the current tree is balanced
+            # using their height
             return [balanced, 1 + max(left[1], right[1])]
         
         return dfs(root)[0]
+    
+    # height(node) = -1 or 1 + max(height(node.left), height(node.right))
