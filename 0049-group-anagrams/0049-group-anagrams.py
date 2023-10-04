@@ -11,7 +11,7 @@ class Solution:
                 count[ord(c) - ord("a")] += 1
             
             # print(res[tuple(count)], "s:", s)
-            res[tuple(count)].append(s)
+            res[tuple(count)].append(s) # list cannot be keys =>  tuple
             
         return res.values()
     
