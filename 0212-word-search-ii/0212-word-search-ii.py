@@ -16,6 +16,7 @@ class Solution:
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         root = TrieNode()
         
+        # add each character to the trie
         for w in words:
             root.addWord(w)
             
@@ -24,11 +25,13 @@ class Solution:
         res, visit = set(), set()
         
         def dfs(r, c, node, word):
+            # if row, column is not inbound, or it's visited, or not in Trie node => return
             if (r < 0 or c < 0 or
                r == ROWS or c == COLS or
                (r, c) in visit or board[r][c] not in node.children):
                 return
-            # mark this pos as visited
+            
+            # mark the current position as visited
             visit.add((r, c))
             node = node.children[board[r][c]] # update the node
             word += board[r][c] # update the word
