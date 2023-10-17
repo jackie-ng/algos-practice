@@ -7,7 +7,7 @@ class Solution:
             res = n1
             
             while res != parent[res]:
-                parent[res] = parent[parent[res]]
+                # parent[res] = parent[parent[res]]
                 res = parent[res]
             return res
         
