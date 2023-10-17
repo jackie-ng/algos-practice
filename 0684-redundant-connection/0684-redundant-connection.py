@@ -6,7 +6,7 @@ class Solution:
         def find(n):
             p = parent[n]
             while p != parent[p]:
-                # parent[p] = parent[parent[p]] # path compression: set p parent to its grandparent to shorten the path as we go up to the path
+                parent[p] = parent[parent[p]] # path compression: set p parent to its grandparent to shorten the path as we go up to the path
                 p = parent[p] # while p is not equal to its own parent, keep going up the length
             return p # once we got into the root parent => return parent[n]
 
