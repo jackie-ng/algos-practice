@@ -6,18 +6,20 @@ class Solution:
         
         for r in range(9):
             for c in range(9):
-                cur = board[r][c]
-                if cur == ".":
+                # if the position is empty -> skip
+                if board[r][c] == ".":
                     continue
-                if(cur in rows[r] or
-                   cur in cols[c] or
-                   cur in squares[(r // 3, c//3)]):
+                cur = board[r][c]
+                # if the value is already in the hash set => duplicate => invalid
+                if (cur in cols[c] or cur in rows[r] or
+                    cur in squares[(r//3, c//3)]):
                     return False
+                # if the value is distinct, add to the hash sets
                 cols[c].add(cur)
                 rows[r].add(cur)
-                squares[(r // 3, c//3)].add(cur)
+                squares[(r//3, c//3)].add(cur)
         return True
-    
+                
 #             N = 9
 
 #         # Use hash set to record the status
