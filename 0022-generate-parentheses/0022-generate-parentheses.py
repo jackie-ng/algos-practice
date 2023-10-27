@@ -1,26 +1,27 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        # recursive + stack
-        # only add open parenthesis if open < n
+        # only add open parentheses if open < n
         # only add a closing parenthesis if close < open
-        # valid IF open = close = n
+        # valid if open == close == n
         stack = []
-        
         res = []
         
-        def backtrack(open, close):
-            if open == close == n: # finished. Stack contains proper parenthesis
-                res.append("".join(stack))
+        def backtrack(openN, closeN):
+            # valid
+            if openN == closeN == n:
+                validVal = "".join(stack)
+                res.append(validVal)
                 return
-            
-            if open < n:
+            # add "("
+            if openN < n:
                 stack.append("(")
-                backtrack(open + 1, close)
-                stack.pop() #update the stack since we only have a single stack variable
-            if close < open: #add closing parenthesis => make sure that close < open
-                stack.append(")")
-                backtrack(open, close + 1)
+                backtrack(openN + 1, closeN)
                 stack.pop()
-                
-        backtrack(0, 0) # pass 0 for the initial open and close count
+            # add ")"
+            if closeN < openN:
+                stack.append(")")
+                backtrack(openN, closeN + 1)
+                stack.pop()
+        
+        backtrack(0, 0)
         return res
