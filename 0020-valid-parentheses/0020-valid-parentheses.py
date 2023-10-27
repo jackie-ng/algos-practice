@@ -1,15 +1,16 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        hash = {")": "(", "]": "[", "}": "{"}
+        hash = {')': '(', '}': '{', ']': '['}
         
         for char in s:
-            if char in hash: # opening parentheses
-                if stack and stack[-1] == hash[char]:
+            if char in hash: # found opening bracket
+                if stack and stack[-1] == hash[char]:  
                     stack.pop()
                 else:
                     return False
-            else: 
+            else:
                 stack.append(char)
-                
+            
         return True if not stack else False
+            
