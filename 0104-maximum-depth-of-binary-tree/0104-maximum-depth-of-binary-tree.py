@@ -12,40 +12,30 @@ class Solution:
 #         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
 
-#         ##### BFS #####    
-#        if not root:
-#            return 0
-#         level = 0
+        ##### BFS #####    
+#         if not root:
+#             return 0
 #         q = collections.deque([root])
-        
+#         level = 0
 #         while q:
-#             #traverse through the level
 #             for i in range(len(q)):
-#                 #pop q node
-#                 node = q.popleft()
-#                 #check the children of this node, add the children to the queue if it's not null
-#                 if node.left:
-#                     q.append(node.left)
-#                 if node.right:
-#                     q.append(node.right)
-                
-                
-#             # after being done with the level traversal, add 1 to the level
+#                 cur = q.popleft()
+#                 if cur.left:
+#                     q.append(cur.left)
+#                 if cur.right:
+#                     q.append(cur.right)
 #             level += 1
 #         return level
-
+    
         ##### DFS #####
-            if not root:
-                return 0
-            stack = [[root, 1]]
-            res = 1
-            
-            while stack:
-                node, depth = stack.pop()
-                
-                if node:
-                    res = max(res, depth) 
-                    stack.append([node.left, depth + 1])
-                    stack.append([node.right, depth + 1])
-            return res
-                    
+        if not root:
+            return 0
+        stack = [[root, 1]]
+        res = 0
+        while stack:
+            cur, depth = stack.pop()
+            if cur:
+                res = max(res, depth)
+                stack.append([cur.left, depth + 1])
+                stack.append([cur.right, depth + 1])
+        return res
