@@ -5,8 +5,8 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        if not list1 or list2 and list1.val > list2.val:
-            list1, list2 = list2, list1
+        if not list1 or list2 and list2.val < list1.val:
+            list2, list1 = list1, list2
         if list1:
             list1.next = self.mergeTwoLists(list1.next, list2)
         return list1
@@ -27,6 +27,7 @@ class Solution:
 #         elif list2:
 #             tail.next = list2 
 #         return dummy.next
+    
         # if list1 is None:
         #     return list2
         # elif list2 is None:
