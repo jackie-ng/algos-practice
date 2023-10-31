@@ -8,16 +8,14 @@ class Solution:
         dummy = ListNode(0, head)
         slow = dummy
         fast = head
-
+        
         while n > 0 and fast:
+            n -= 1
             fast = fast.next
-            n -= 1 # when n = 0, we shifted the amount of n
-
-
         while fast:
             slow = slow.next
             fast = fast.next
-
-        # delete
         slow.next = slow.next.next
-        return dummy.next
+        return dummy.next # return head
+        
+        
