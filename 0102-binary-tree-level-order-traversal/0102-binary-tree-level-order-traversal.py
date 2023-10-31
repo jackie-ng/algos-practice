@@ -7,19 +7,19 @@
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         res = []
+        q = collections.deque([root])
         
-        queue = collections.deque([root])
-        
-        while queue:
+        while q:
             level = []
-            for i in range(len(queue)):
-                node = queue.popleft()
-                if node:
-                    level.append(node.val)
-                    queue.append(node.left)
-                    queue.append(node.right)
+            for i in range(len(q)):
+                cur = q.popleft()
+                if cur:
+                    level.append(cur.val)
+                    q.append(cur.left)
+                    q.append(cur.right)
             if level:
                 res.append(level)
         return res
+        
                     
-            
+        
