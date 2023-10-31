@@ -9,14 +9,12 @@ class Solution:
         slow = dummy
         fast = head
         
-        # fast jump n steps
         while n > 0 and fast:
             n -= 1
             fast = fast.next
+        
         while fast:
             slow = slow.next
             fast = fast.next
         slow.next = slow.next.next
-        return dummy.next # return head
-        
-        
+        return dummy.next
