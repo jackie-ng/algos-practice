@@ -9,6 +9,7 @@ class Solution:
         slow = dummy
         fast = head
         
+        # fast jump n steps
         while n > 0 and fast:
             n -= 1
             fast = fast.next
