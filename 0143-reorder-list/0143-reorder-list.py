@@ -18,29 +18,29 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        # find middle
+        # Find middle
         slow, fast = head, head.next
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-
-        #reverse the second half
+            
+        # Reverse second half 
         secondHalf = slow.next
-        prev = slow.next = None
-        
+        slow.next = None
+        prev = None
         while secondHalf:
             temp = secondHalf.next
-            secondHalf.next = prev 
+            secondHalf.next = prev
             prev = secondHalf
             secondHalf = temp
-
-        # merge two half
+        
+        # Merge 2 lists
         firstHalf = head
         secondHalf = prev
         while secondHalf:
             temp1, temp2 = firstHalf.next, secondHalf.next
             firstHalf.next = secondHalf
             secondHalf.next = temp1
-            # shift pointer
+            # update pointers
             firstHalf, secondHalf = temp1, temp2
             
