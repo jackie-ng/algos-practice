@@ -8,7 +8,7 @@ class Solution:
             
         def backtracking():
             if len(perm) == len(nums):
-                res.append(perm.copy())
+                res.append(perm[:])
                 return
             for n in count:
                 if count[n] > 0:
