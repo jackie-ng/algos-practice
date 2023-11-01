@@ -25,22 +25,23 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        output =[]
-        self.inorder(root, output)
+        output = []
         
+        self.inOrder(root, output)
         for i in range(1, len(output)):
-            if output[i-1]>= output[i]:
+            if output[i - 1] >= output[i]:
                 return False
-        
         return True
-    
-    # Time complexity of inorder traversal is O(n)
+        
+        # Time complexity of inorder traversal is O(n)
     # Fun fact: Inorder traversal leads to a sorted array if it is 
     # a Valid Binary Search. Tree.
-    def inorder(self, root, output):
-        if root is None:
-            return
-        
-        self.inorder(root.left, output)
-        output.append(root.val)
-        self.inorder(root.right, output)
+    def inOrder(self, node, output=[]):
+        # nonlocal output
+        if node is None:
+            return 
+
+        self.inOrder(node.left, output)
+        output.append(node.val)
+        self.inOrder(node.right, output)
+            
