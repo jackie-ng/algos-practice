@@ -4,8 +4,10 @@ class Solution:
         visit = set()
         
         def dfs(r, c):
-            if (r < 0 or r == ROWS or c < 0 or c == COLS or
-                grid[r][c] == 0 or (r, c) in visit):
+            if (r < 0 or r >= ROWS or 
+                c < 0 or c >= COLS or
+                grid[r][c] == 0 or 
+                (r, c) in visit):
                 return 0
             
             visit.add((r, c))
