@@ -32,14 +32,14 @@ class Solution:
     @param edges: a list of undirected edges
     @return: true if it's a valid tree, or false
     """
-    def __find(self, n: int) -> int:
+    def find(self, n: int) -> int:
         while n != self.parents.get(n, n):
             n = self.parents.get(n, n)
         return n
 
-    def __connect(self, n: int, m: int) -> None:
-        pn = self.__find(n)
-        pm = self.__find(m)
+    def union(self, n: int, m: int) -> None:
+        pn = self.find(n)
+        pm = self.find(m)
         if pn == pm:
             return
         if self.heights.get(pn, 1) > self.heights.get(pm, 1):
@@ -56,9 +56,9 @@ class Solution:
         self.components = n
 
         for e1, e2 in edges:
-            if self.__find(e1) == self.__find(e2):  # 'redundant' edge
+            if self.find(e1) == self.find(e2):  # 'redundant' edge
                 return False
-            self.__connect(e1, e2)
+            self.union(e1, e2)
 
         return self.components == 1  # forest contains one tree
 
