@@ -1,34 +1,38 @@
+from collections import defaultdict, deque
 class Solution:
-    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        # build adjacency list of prereqs
-        prereq = { c:[] for c in range(numCourses) }
-        for crs, pre in prerequisites:
-            prereq[crs].append(pre)
-            
-        # a course has 3 possible states:
-        # visited -> crs has been added to output
-        # visiting -> crs no added to output, but added to cycle
-        # unvisited -> crs not added to output or cycle
-        output = []
-        visit, cycle = set(), set()
 
-        def dfs(crs):
-            if crs in cycle:
-                return False
-            if crs in visit:
-                return True
-            
-            cycle.add(crs)
-            for pre in prereq[crs]:
-                if not dfs(pre): return False # detect a cycle
-            
-            cycle.remove(crs)
-            visit.add(crs)
-            output.append(crs)
-            
-            return True
+    def findOrder(self, numCourses, prerequisites):
+        """
+        :type numCourses: int
+        :type prerequisites: List[List[int]]
+        :rtype: List[int]
+        """
+
+        adj = [[] for i in range(numCourses)]
+        visited = [0] * numCourses
+        indeg = [0] * numCourses
+        res = []
         
-        for c in range(numCourses):
-            if not dfs(c): return [] # detact a cycle
-        return output
+        for crs, pre in prerequisites:
+            adj[pre].append(crs)
             
+        q = deque()
+        
+        for i in range(numCourses):
+            for j in adj[i]:
+                indeg[j] += 1
+        for i in range(numCourses):
+            if indeg[i] == 0:
+                q.append(i)
+                
+        while q:
+            node = q.popleft()
+            res.append(node)
+            for i in adj[node]:
+                if indeg[i] != 0:
+                    indeg[i] -= 1
+                if indeg[i] == 0:
+                    q.append(i)
+
+        return res if len(res) == numCourses else []
+
