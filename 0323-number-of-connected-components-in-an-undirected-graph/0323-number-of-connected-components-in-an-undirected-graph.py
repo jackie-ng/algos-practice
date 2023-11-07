@@ -20,7 +20,7 @@ class Solution:
                 root[r1] = r2
             else:
                 root[r1] = r2
-                rank[r2] += rank[r1]
+                rank[r2] += 1
             return 1
         
         for n1, n2 in edges:
