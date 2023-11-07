@@ -26,39 +26,45 @@
                 
 # alternative solution via DSU O(ElogV) time complexity and 
 # save some space as we don't recreate graph\tree into adjacency list prior dfs and loop over the edge list directly
-class Solution:
-    """
-    @param n: An integer
-    @param edges: a list of undirected edges
-    @return: true if it's a valid tree, or false
-    """
-    def find(self, n: int) -> int:
-        while n != self.parents.get(n, n):
-            n = self.parents.get(n, n)
-        return n
 
-    def union(self, n: int, m: int) -> None:
-        pn = self.find(n)
-        pm = self.find(m)
-        if pn == pm:
-            return
-        if self.heights.get(pn, 1) > self.heights.get(pm, 1):
-            self.parents[pn] = pm
-        else:
-            self.parents[pm] = pn
-            self.heights[pm] = self.heights.get(pn, 1) + 1
-        self.components -= 1
+            
+    
+class Solution:
 
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
-        # init here as not sure that ctor will be re-invoked in different tests
-        self.parents = {}
-        self.heights = {}
-        self.components = n
+        # Condition 1: The graph must contain n - 1 edges.
+        if len(edges) != n - 1: return False
+        
+        root = [i for i in range(n)]
+        rank = [1] * n
+        count = n
+    
+        def find(x):
+            if x == root[x]:
+                return x
+            root[x] = find(root[x])
+            return root[x]
 
+        def union(x, y):
+            nonlocal count
+            rootX = find(x)
+            rootY = find(y)
+            if rootX != rootY:
+                if rank[rootX] > rank[rootY]:
+                    root[rootY] = rootX 
+                elif rank[rootY] > rank[rootX]:
+                    root[rootX] = rootY
+                else:
+                    root[rootY] = rootX
+                    rank[rootX] += 1
+                count -= 1
+
+
+        # Add each edge. Check if a merge happened, because if it 
+        # didn't, there must be a cycle.
         for e1, e2 in edges:
-            if self.find(e1) == self.find(e2):  # 'redundant' edge
+            if find(e1) == find(e2):
                 return False
-            self.union(e1, e2)
-
-        return self.components == 1  # forest contains one tree
-
+            union(e1, e2)
+        # If we got this far, there's no cycles!
+        return count == 1
