@@ -6,7 +6,6 @@ class Solution:
         n = len(isConnected)
         root = [i for i in range(n)]
         rank = [1] * n
-        count = n
         
         
         def find(n):
@@ -28,6 +27,7 @@ class Solution:
                     rank[r2] += 1
                 count -= 1
         
+        count = n
         for row in range(n):
             for col in range(n):            
                 if isConnected[row][col] == 1:
