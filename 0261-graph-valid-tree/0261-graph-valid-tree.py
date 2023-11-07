@@ -40,16 +40,14 @@ class Solution:
         count = n
     
         def find(x):
-            if x == root[x]:
-                return x
-            root[x] = find(root[x])
+            if x != root[x]:
+                root[x] = find(root[x])
             return root[x]
 
         def union(x, y):
             nonlocal count
             rootX = find(x)
             rootY = find(y)
-            # if rootX != rootY:
             if rank[rootX] > rank[rootY]:
                 root[rootY] = rootX 
             elif rank[rootY] > rank[rootX]:
