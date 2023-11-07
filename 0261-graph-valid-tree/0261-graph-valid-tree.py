@@ -49,15 +49,15 @@ class Solution:
             nonlocal count
             rootX = find(x)
             rootY = find(y)
-            if rootX != rootY:
-                if rank[rootX] > rank[rootY]:
-                    root[rootY] = rootX 
-                elif rank[rootY] > rank[rootX]:
-                    root[rootX] = rootY
-                else:
-                    root[rootY] = rootX
-                    rank[rootX] += 1
-                count -= 1
+            # if rootX != rootY:
+            if rank[rootX] > rank[rootY]:
+                root[rootY] = rootX 
+            elif rank[rootY] > rank[rootX]:
+                root[rootX] = rootY
+            else:
+                root[rootY] = rootX
+                rank[rootX] += 1
+            count -= 1
 
 
         # Add each edge. Check if a merge happened, because if it 
