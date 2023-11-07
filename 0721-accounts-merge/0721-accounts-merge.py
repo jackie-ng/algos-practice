@@ -4,10 +4,9 @@ class UnionFind:
         self.rank = [1] * n
     
     def find(self, x):
-        while x != self.par[x]:
-            self.par[x] = self.par[self.par[x]]
-            x = self.par[x]
-        return x
+        if x != self.par[x]:
+            self.par[x] = self.find(self.par[x])
+        return self.par[x]
     
     def union(self, x1, x2):
         p1, p2 = self.find(x1), self.find(x2)
