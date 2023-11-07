@@ -29,7 +29,7 @@ class Solution:
                 count -= 1
         
         for row in range(n):
-            for col in range(row, n):            
+            for col in range(n):            
                 if isConnected[row][col] == 1:
                     union(row, col)
         return count
