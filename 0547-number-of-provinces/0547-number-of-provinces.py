@@ -28,10 +28,8 @@ class Solution:
                     rank[r2] += 1
                 count -= 1
         
-        
-        
         for row in range(n):
-            for col in range(row + 1, n):            
+            for col in range(row, n):            
                 if isConnected[row][col] == 1:
                     union(row, col)
         return count
