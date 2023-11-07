@@ -1,41 +1,37 @@
-class UnionFind:
-    def __init__(self, size):
-        self.root = [i for i in range(size)]
-        self.rank = [1] * size
-        self.count = size
-    
-    def find(self, x):
-        if x == self.root[x]:
-            return x
-        self.root[x] = self.find(self.root[x])
-        return self.root[x]
-    
-    def union(self, x, y):
-        rootX = self.find(x)
-        rootY = self.find(y)
-        
-        if rootX != rootY:
-            if self.rank[rootX] > self.rank[rootY]:
-                self.root[rootY] = rootX 
-            elif self.rank[rootY] > self.rank[rootX]:
-                self.root[rootX] = rootY
-            else:
-                self.root[rootY] = rootX
-                self.rank[rootX] += 1
-            self.count -= 1
-            
-    def getCount(self):
-        return self.count
-                
-        
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         if not isConnected or len(isConnected) == 0:
             return 0
         
-        uf = UnionFind(len(isConnected))
-        for row in range(len(isConnected)):
-            for col in range(row + 1, len(isConnected)):            
+        n = len(isConnected)
+        root = [i for i in range(n)]
+        rank = [1] * n
+        count = n
+        
+        
+        def find(n):
+            if root[n] != n:
+                root[n] = find(root[n])
+            return root[n]
+            
+        def union(n1, n2):
+            nonlocal count
+            r1, r2 = find(n1), find(n2)
+            
+            if r1 != r2:
+                if rank[r1] > rank[r2]:
+                    root[r2] = r1
+                elif rank[r2] > rank[r1]:
+                    root[r1] = r2
+                else:
+                    root[r1] = r2
+                    rank[r2] += 1
+                count -= 1
+        
+        
+        
+        for row in range(n):
+            for col in range(row + 1, n):            
                 if isConnected[row][col] == 1:
-                    uf.union(row, col)
-        return uf.getCount()
+                    union(row, col)
+        return count
