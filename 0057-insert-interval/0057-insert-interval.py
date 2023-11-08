@@ -5,14 +5,12 @@ class Solution:
         for i in range(len(intervals)):
             cur = intervals[i]
             
-            if newInterval[1] < cur[0] : # nerInterval end value < cur start val
+            if cur[1] < newInterval[0]:
+                res.append(cur)
+            elif newInterval[1] < cur[0]:
                 res.append(newInterval)
                 return res + intervals[i:]
-            elif newInterval[0] > cur[1]: # nerInterval end value > cur start val
-                res.append(cur)
             else:
-                newInterval = [min(newInterval[0], cur[0]), max(newInterval[1], cur[1])]
-                
-                
+                newInterval = [ min(newInterval[0], cur[0]), max(newInterval[1], cur[1]) ]
         res.append(newInterval)
         return res
