@@ -3,8 +3,6 @@ class Solution:
         
         
         def isPalidrome(s): 
-            # if len(s) <= 1:
-            #     return False
             
             l, r = 0, len(s) - 1
             while l < r:
