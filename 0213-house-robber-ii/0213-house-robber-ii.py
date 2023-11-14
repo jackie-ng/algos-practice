@@ -1,7 +1,6 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
         
-        
         def house_robber(nums):
             rob1, rob2 = 0, 0
             
