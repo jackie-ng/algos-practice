@@ -19,7 +19,15 @@ class Solution:
 #         return dfs(0, 0)
 
         # Tabulation
-        dp = {0}
+    
+        memo = {0}
+        sumA = sum(stones)
         for a in stones:
-            dp = {a + x for x in dp} | {abs(a - x) for x in dp}
-        return min(dp)
+            memo |= {a + i for i in memo}
+        return min(abs(sumA - i - i) for i in memo)
+    
+#         dp = {0}
+#         for a in stones:
+#             dp = {a + x for x in dp} | {abs(a - x) for x in dp}
+#         return min(dp)
+
