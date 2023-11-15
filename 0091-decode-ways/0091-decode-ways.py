@@ -69,9 +69,7 @@ class Solution:
 
                 # If the previous two digits form a valid number (between '10' and '26'), update current count
                 if i > 0 and (s[i-1] == '1' or (s[i-1] == '2' and '0' <= s[i] <= '6')):
-                    temp = current_count
-                    current_count += previous_count
-                    previous_count = temp
+                    current_count, previous_count = current_count + previous_count, current_count
                 else:
                     # Otherwise, update previous count to the current count
                     previous_count = current_count
