@@ -33,18 +33,6 @@ class Solution:
 
 #         return dfs(0, True)
     
-    
-#             for price in prices:
-#                 # Alternative: the calculation is done in parallel.
-#                 # Therefore no need to keep temporary variables
-#                 #sold, held, reset = held + price, max(held, reset-price), max(reset, sold)
-
-#                 pre_sold = sold
-#                 sold = held + price
-#                 held = max(held, reset - price)
-#                 reset = max(reset, pre_sold)
-
-#             return max(sold, reset)
 
             if not prices:
                 return 0
