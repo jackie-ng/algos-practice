@@ -6,3 +6,7 @@ class Solution:
             # XOR will cancel out everything except for the result
             missing ^= i ^ num
         return missing
+    
+        # expected_sum = len(nums)*(len(nums)+1)//2
+        # actual_sum = sum(nums)
+        # return expected_sum - actual_sum
