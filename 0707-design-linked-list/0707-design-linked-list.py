@@ -35,15 +35,15 @@ class MyLinkedList:
         prevRight.next = node
 
     def addAtIndex(self, index: int, val: int) -> None:
-        next = self.left.next
-        while next and index > 0:
-            next = next.next
+        nextLeft = self.left.next
+        while nextLeft and index > 0:
+            nextLeft = nextLeft.next
             index -= 1
         
-        if next and index == 0:
-            node, prev = ListNode(val), next.prev
-            node.next, node.prev = next, prev
-            next.prev = node
+        if nextLeft and index == 0:
+            node, prev = ListNode(val), nextLeft.prev
+            node.next, node.prev = nextLeft, prev
+            nextLeft.prev = node
             prev.next = node
 
 
