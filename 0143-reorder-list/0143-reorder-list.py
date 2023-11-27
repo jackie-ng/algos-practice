@@ -18,19 +18,22 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        # Find middle
+        # find middle
         slow, fast = head, head.next
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
             
-        # Reverse second half 
+        # reverse second half
         secondHalf = slow.next
         slow.next = None
         prev = None
         while secondHalf:
+            # For each current node, save its neighbours
             temp = secondHalf.next
+            # change the node's next pointer to point to the previous node:
             secondHalf.next = prev
+            # update pointers
             prev = secondHalf
             secondHalf = temp
         
@@ -43,4 +46,7 @@ class Solution:
             secondHalf.next = temp1
             # update pointers
             firstHalf, secondHalf = temp1, temp2
+        
+        
             
+        
