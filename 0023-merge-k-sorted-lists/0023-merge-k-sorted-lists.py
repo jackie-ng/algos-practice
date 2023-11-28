@@ -5,6 +5,7 @@
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        # Check if the input list of linked lists is empty
         if not lists or len(lists) == 0:
             return None
         
@@ -13,8 +14,9 @@ class Solution:
             
             for i in range(0, len(lists), 2):
                 l1 = lists[i]
-                l2 = lists[i + 1] if (i + 1) < len(lists) else None # inbound
+                l2 = lists[i + 1] if (i + 1) < len(lists) else None # Check if the second list exists / inbound
                 mergedList.append(self.mergeList(l1, l2))
+            # Update the lists variable with the merged lists
             lists = mergedList
         return lists[0]
     
