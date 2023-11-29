@@ -6,6 +6,8 @@ class Solution:
         ROWS, COLS = len(rooms), len(rooms[0])
         visit = set()
         q = deque()
+        dist = 0
+        
         
         def addRoom(r, c):
             if (r < 0 or r == ROWS or
@@ -15,22 +17,22 @@ class Solution:
             visit.add((r, c))
             q.append([r, c])
         
+        # find a gate
         for r in range(ROWS):
             for c in range(COLS):
-                if rooms[r][c] == 0: # find a gate
+                if rooms[r][c] == 0: 
                     q.append([r, c])
                     visit.add((r, c))
-        dist = 0
-        
+        # q now contains the position of the gate
         while q:
             for i in range(len(q)):
                 r, c = q.popleft()
                 
-                rooms[r][c] = dist 
+                rooms[r][c] = dist # change the gate to current dist
                 addRoom(r + 1, c) 
-                addRoom(r -1, c) 
+                addRoom(r - 1, c) 
                 addRoom(r, c + 1) 
                 addRoom(r, c - 1)
             dist += 1
-            
+        
         
