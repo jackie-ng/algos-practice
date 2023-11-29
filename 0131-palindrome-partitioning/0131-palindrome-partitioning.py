@@ -5,7 +5,7 @@ class Solution:
         
         def backtrack(i):
             if i >= len(s):
-                res.append(subset.copy())
+                res.append(subset[:])
                 return 
             
             for j in range(i, len(s)):
@@ -13,7 +13,6 @@ class Solution:
                     subset.append(s[i:j+1])
                     backtrack(j+1)
                     subset.pop()
-                    
         backtrack(0)
         return res
     
@@ -23,3 +22,4 @@ class Solution:
                 return False
             l, r = l + 1, r - 1
         return True
+      
