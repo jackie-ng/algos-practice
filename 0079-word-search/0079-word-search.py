@@ -20,8 +20,6 @@ class Solution:
             # clear up for the next traversal
             visited.remove((r, c))
             return res
-            
-        
         for r in range(ROWS):
             for c in range(COLS):
                 if dfs(r, c, 0):
