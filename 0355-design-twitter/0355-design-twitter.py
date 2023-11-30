@@ -6,7 +6,7 @@ class Twitter:
 
     def postTweet(self, userId: int, tweetId: int) -> None:
         self.tweetMap[userId].append([self.count, tweetId])
-        self.count -= 1
+        self.count -= 1 # decrement for the next tweets (keep track of the most recent tweet)
 
     def getNewsFeed(self, userId: int) -> List[int]:
         # Retrieve the 10 most recent tweet ids in the user's news feed. 
@@ -28,11 +28,11 @@ class Twitter:
         # Each element in the heap is a list [count, tweetId, followeeId, index], 
         # count: timestamp, tweetId: ID of the tweet, followeeId: ID of the user who posted the tweet, 
         # index: index of the tweet in the user's tweet list.
-        for followee in self.followMap[userId]:
-            if followee in self.tweetMap:
-                index = len(self.tweetMap[followee]) - 1
-                count, tweetId = self.tweetMap[followee][index]
-                heapq.heappush(minHeap, [count, tweetId, followee, index - 1])
+        for followeeId in self.followMap[userId]:
+            if followeeId in self.tweetMap:
+                index = len(self.tweetMap[followeeId]) - 1 # last value of the list
+                count, tweetId = self.tweetMap[followeeId][index]
+                heapq.heappush(minHeap, [count, tweetId, followeeId, index - 1]) # index - 1 for next tweet
 
         # 4. Retrieving the 10 most recent tweets from the min heap
         # It pops elements from the min heap (which are the tweets with the smallest timestamps) and appends the tweet ID to the result list. If there are more tweets from the same user, they are pushed onto the heap for further consideration.
