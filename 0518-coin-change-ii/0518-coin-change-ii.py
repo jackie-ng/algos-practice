@@ -1,35 +1,36 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        # MEMOIZATION
-        # Time: O(n*m)
-        # Memory: O(n*m)
-        memo = {}
-
-        def dfs(i, remaining_amount):
-            if remaining_amount == amount:
-                return 1 # One way to make up the amount is not choosing any coin.
-
-            if remaining_amount > amount or i == len(coins):
-                return 0 # No more coins or the amount is negative, no valid combination.
-            if (i, remaining_amount) in memo:
-                return memo[(i, remaining_amount)]
-
-            memo[(i, remaining_amount)] = dfs(i, remaining_amount + coins[i]) + dfs(i + 1, remaining_amount)
-            return memo[(i, remaining_amount)]
-
-        return dfs(0, 0)
-
-#         # DYNAMIC PROGRAMMING
+#         # MEMOIZATION
 #         # Time: O(n*m)
 #         # Memory: O(n*m)
-#         dp = [[0] * (len(coins) + 1) for i in range(amount + 1)]
-#         dp[0] = [1] * (len(coins) + 1)
-#         for a in range(1, amount + 1):
-#             for i in range(len(coins) - 1, -1, -1):
-#                 dp[a][i] = dp[a][i + 1]
-#                 if a - coins[i] >= 0:
-#                     dp[a][i] += dp[a - coins[i]][i]
-#         return dp[amount][0]
+#         memo = {}
+
+#         def dfs(i, remaining_amount):
+#             if remaining_amount == amount:
+#                 return 1 # One way to make up the amount is not choosing any coin.
+
+#             if remaining_amount > amount or i == len(coins):
+#                 return 0 # No more coins or the amount is negative, no valid combination.
+#             if (i, remaining_amount) in memo:
+#                 return memo[(i, remaining_amount)]
+
+#             memo[(i, remaining_amount)] = dfs(i, remaining_amount + coins[i]) + dfs(i + 1, remaining_amount)
+#             return memo[(i, remaining_amount)]
+
+#         return dfs(0, 0)
+
+        # DYNAMIC PROGRAMMING
+        # Time: O(n*m)
+        # Memory: O(n*m)
+        dp = [[0] * (len(coins) + 1) for i in range(amount + 1)]
+        dp[0] = [1] * (len(coins) + 1)
+        for a in range(1, amount + 1):
+            for i in range(len(coins) - 1, -1, -1):
+                dp[a][i] = dp[a][i + 1]
+                if a - coins[i] >= 0:
+                    remaining = a - coins[i]
+                    dp[a][i] += dp[remaining][i]
+        return dp[amount][0]
 
 #         # DYNAMIC PROGRAMMING
 #         # Time: O(n*m)
