@@ -23,36 +23,35 @@ class Solution:
         ## WATCH OUT FOR LOOPS,
         ## 1. We are traversing reverse to prevent sub problem overlapping, consider string "01" and m = 5, n = 3 and draw matrix from normal order and in reverse order, you'll understand
         ## 2. The lower limit is number of zeros and ones, coz before that you wont find any match
-        # dp = [[ 0 ] * (n+1) for _ in range(m+1)]
-        # for s in strs:
-        #     zeros, ones = s.count("0"), s.count("1")
-        #     for i in range(m, zeros - 1, -1):
-        #         for j in range(n, ones - 1, -1):
-        #             # dp[i][j] indicates it has i zeros and j ones, can this string be formed with those ?
-        #             dp[i][j] = max( 1 + dp[i - zeros][j- ones], dp[i][j] )
-        #     # print(dp)
-        # return dp[-1][-1]
+        dp = [[ 0 ] * (n+1) for _ in range(m+1)]
+        
+        for s in strs:
+            zeros, ones = s.count("0"), s.count("1")
+            for i in range(m, zeros - 1, -1):
+                for j in range(n, ones - 1, -1):
+                    # dp[i][j] indicates it has i zeros and j ones, can this string be formed with those ?
+                    dp[i][j] = max( 1 + dp[i - zeros][j- ones], dp[i][j] )
+        return dp[-1][-1]
 # Memoization
-        memo = {}
+#         memo = {}
         
-        def dfs(i, m, n):
-            if i == len(strs):
-                return 0
-            if (i, m, n) in memo:
-                return memo[(i, m, n)]
+#         def dfs(i, m, n):
+#             if i == len(strs):
+#                 return 0
+#             if (i, m, n) in memo:
+#                 return memo[(i, m, n)]
             
-            mCount, nCount = strs[i].count("0"), strs[i].count("1") 
+#             mCount, nCount = strs[i].count("0"), strs[i].count("1") 
+#             memo[(i, m, n)] = dfs(i + 1, m, n)
             
-            memo[(i, m, n)] = dfs(i + 1, m, n)
-            
-            if mCount <= m and nCount <= n:
-                memo[(i, m, n)] = max(
-                    1 + dfs(i+1, m - mCount, n - nCount), # include the subset, decrease the bound
-                    dfs(i, m, n)) # not include the subset
+#             if mCount <= m and nCount <= n:
+#                 memo[(i, m, n)] = max(
+#                     1 + dfs(i+1, m - mCount, n - nCount), # include the subset, decrease the bound
+#                     dfs(i, m, n)) # not include the subset
                 
-            return memo[(i, m, n)]
+#             return memo[(i, m, n)]
         
-        return dfs(0, m, n)
+#         return dfs(0, m, n)
     
     
       
