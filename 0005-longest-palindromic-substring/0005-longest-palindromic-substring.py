@@ -3,8 +3,12 @@ class Solution:
 #         ### Expand from the middle ###
 #         res = ""
 
+#         # loop through every single character in s
 #         for i in range(len(s)):
-#             for l, r in ((i,i), (i,i+1)): # odd and even lengths
+#            # Loop through odd/even length substring
+#             for l, r in ((i,i), (i,i+1)): # odd and even length
+#                 # while l,r pointers are inbound and is palindrome
+#                 # expand res inclusively if the length is now longer
 #                 while l >= 0 and r < len(s) and s[l] == s[r]:
 #                     if (r - l + 1) > len(res):
 #                         res = s[l:r + 1]
@@ -13,37 +17,33 @@ class Solution:
 
 #         return res
     
-        ### DP ###
-
         n = len(s)
-
-        # Create a table to store whether a substring is a palindrome
         dp = [[False] * n for _ in range(n)]
+        ans = [0, 0]
 
-        start = 0  # Start index of the longest palindromic substring
-        max_length = 1  # Length of the longest palindromic substring
-
+        
         # Every individual character is a palindrome
         for i in range(n):
             dp[i][i] = True
-
-        # Check for palindromes of length 2
+        
+        # check for palindromes of length 2 to find the start index 
+        # and then expand from the middle
         for i in range(n - 1):
             if s[i] == s[i + 1]:
                 dp[i][i + 1] = True
-                start = i  # Update start index
-                max_length = 2  # Update length
+                ans = [i, i + 1]
 
-        # Check for palindromes of length 3 or more
-        for length in range(3, n + 1):
-            for i in range(n - length + 1):
-                j = i + length - 1
-                # Check if the substring from i to j is a palindrome
-                dp[i][j] = dp[i + 1][j - 1] and s[i] == s[j]
+        
+        
+        # check for palidrome sub with length > 3
+        # the purpose is to expand the length of the palindrome substring
+        for diff in range(2, n):
+            for i in range(n - diff):
+                j = i + diff
+                # dp[i+1][j-1] = the start and end of a panlidrome
+                if s[i] == s[j] and dp[i + 1][j - 1]:
+                    dp[i][j] = True
+                    ans = [i, j]
 
-                if dp[i][j]:
-                    start = i  # Update start index
-                    max_length = length  # Update length
-
-        # Return the longest palindromic substring
-        return s[start:start + max_length]
+        i, j = ans
+        return s[i:j + 1]
