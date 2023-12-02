@@ -25,8 +25,7 @@ class Solution:
             target = sum(nums)//2
             memo = {}
 
-            def helper(total, i):
-                # nonlocal nums, memo
+            def dfs(total, i):
                 # Check if the state (index, current_sum) has already been visited.
 
                 if (total, i) in memo:
@@ -37,7 +36,7 @@ class Solution:
                     return True
                 # Recursive case: Try including and excluding the current element.
 
-                memo[(total, i)] = helper(total-nums[i], i+1) or helper(total, i+1)
+                memo[(total, i)] = dfs(total-nums[i], i+1) or dfs(total, i+1)
                 return memo[(total, i)]
 
-            return helper(target, 0) 
+            return dfs(target, 0) 
