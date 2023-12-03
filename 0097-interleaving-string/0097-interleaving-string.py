@@ -27,37 +27,6 @@ class Solution:
 #         # The result is found at the bottom-right corner of the table
 #         return dp[len_s1][len_s2]
 
-#         memo = {}
-#         if len(s1) == 0:
-#             return s2 == s3
-#         if len(s2) == 0:
-#             return s1 == s3
-#         if len(s1) + len(s2) != len(s3): 
-#             return False
-        
-#         def dfs(i,j):
-#             if (i,j) in memo: 
-#                 return memo[(i,j)]
-            
-#             c1 = c2 = False 
-            
-#             # Base case: If we have reached the end of all strings
-#             if i == len(s1) and j == len(s2): 
-#                 return True
-                
-#             # Check if interleaving is possible and recurse accordingly
-#             if i < len(s1) and s1[i] == s3[i+j]:
-#                 c1 = dfs(i+1,j)
-           
-#             if j < len(s2) and s2[j] == s3[i+j]:
-#                 c2 = dfs(i,j+1)  
-                
-#             # Memoize the result before returning
-#             memo[(i,j)] = c1 or c2
-#             return c1 or c2
-#         # Start the recursive process with initial indices (0, 0, 0)
-#         dfs(0,0)
-#         return memo[(0,0)]
 
         if len(s1) + len(s2) != len(s3):
             return False
