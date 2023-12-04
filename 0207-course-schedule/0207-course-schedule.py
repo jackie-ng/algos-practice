@@ -1,29 +1,50 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        preMap = { i:[] for i in range(numCourses) } # each course set to empty list
+#         preMap = { i:[] for i in range(numCourses)}
+#         for crs, pre in prerequisites:
+#             preMap[crs].append(pre)
+#         visit = []
+#         def dfs(crs):
+#             if crs in visit:
+#                 return False
+#             if preMap[crs] == []:
+#                 return True
+            
+#             visit.append(crs)
+#             for pre in preMap[crs]:
+#                 if not dfs(pre):
+#                     return False
+#             visit.remove(crs)
+#             preMap[crs] = []
+#             return True
         
-        for crs, pre in prerequisites:
-            preMap[crs].append(pre)
+#         for crs in range(numCourses):
+#             if not dfs(crs):
+#                 return False
             
-        # visitSet = all course along the curr DFS path
-        visitSet = set()
+#         return True
+    
+        indegree = [0] * numCourses
+        adj = [[] for _ in range(numCourses)]
         
-        def dfs(crs):
-            ## base case ##
-            if crs in visitSet: # detect a loop
-                return False
-            if preMap[crs] == []: # this course has no prereq
-                return True
-            
-            visitSet.add(crs)
-            for pre in preMap[crs]: 
-                if not dfs(pre): return False ## if 1 course cannot be completed => return False
-            
-            visitSet.remove(crs) #finish visiting => remove from visitSet
-            preMap[crs] = [] # to avoid repeated work since we checked it before
-            return True
-        
-        for crs in range(numCourses):
-            if not dfs(crs): return False
-            
-        return True
+        # Construct indegree table
+        for pre in prerequisites:
+            adj[pre[1]].append(pre[0])
+            indegree[pre[0]] += 1
+
+        # Append node(s) with 0 indegree to the queue
+        queue = deque()
+        for i in range(numCourses):
+            if indegree[i] == 0:
+                queue.append(i)
+                
+        nodesVisited = 0
+    
+        while queue:
+            node = queue.popleft()
+            nodesVisited += 1
+            for neighbor in adj[node]:
+                indegree[neighbor] -= 1
+                if indegree[neighbor] == 0:
+                    queue.append(neighbor)
+        return nodesVisited == numCourses
