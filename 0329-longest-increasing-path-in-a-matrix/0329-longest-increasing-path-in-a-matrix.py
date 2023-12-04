@@ -37,20 +37,21 @@ class Solution:
 #         return path_len 
     
          # dfs
+        rows, cols = len(matrix), len(matrix[0])
+        memo = {}
+        dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        
         def dfs(pre, r, c):
             # preorder
-            if r in {-1, rows} or c in {-1, cols} or pre >= matrix[r][c]:
+            if r in {-1, rows} or c in {-1, cols} or pre >= matrix[r][c]: # out of bounds
                 return 0
             
-            if (r, c) in vals:
-                return vals[(r, c)]
+            if (r, c) in memo: 
+                return memo[(r, c)]
             
             # traverse neighber
-            vals[(r, c)] = 1 + max(dfs(matrix[r][c], r+i, c+j) for (i, j) in dirs)
-            return vals[(r, c)]
+            memo[(r, c)] = 1 + max(dfs(matrix[r][c], r+i, c+j) for (i, j) in dirs)
+            return memo[(r, c)]
         
-        dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-        rows, cols = len(matrix), len(matrix[0])
-        vals = {}
         
         return max(dfs(-1, r, c) for r in range(rows) for c in range(cols))
