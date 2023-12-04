@@ -5,8 +5,10 @@ class Solution:
 #             preMap[crs].append(pre)
 #         visit = []
 #         def dfs(crs):
+#             # Found a cycle => False
 #             if crs in visit:
 #                 return False
+#             # Visited all courses without detecting a cycle => True
 #             if preMap[crs] == []:
 #                 return True
             
