@@ -1,26 +1,26 @@
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        self.flightMap = defaultdict(list)
+        flightMap = defaultdict(list)
 
         for ticket in tickets:
             origin, dest = ticket[0], ticket[1]
-            self.flightMap[origin].append(dest)
+            flightMap[origin].append(dest)
 
         # sort the itinerary based on the lexical order
-        for origin, itinerary in self.flightMap.items():
+        for origin, itinerary in flightMap.items():
         # Note that we could have multiple identical flights, i.e. same origin and destination.
             itinerary.sort(reverse=True)
+            
+        def dfs(origin):
+            destList = flightMap[origin]
+            while destList:
+                #while we visit the edge, we trim it off from graph.
+                nextDest = destList.pop()
+                dfs(nextDest)
+            result.append(origin)
+            
 
-        self.result = []
-        self.DFS('JFK')
-
+        result = []
+        dfs('JFK')
         # reconstruct the route backwards
-        return self.result[::-1]
-
-    def DFS(self, origin):
-        destList = self.flightMap[origin]
-        while destList:
-            #while we visit the edge, we trim it off from graph.
-            nextDest = destList.pop()
-            self.DFS(nextDest)
-        self.result.append(origin)
+        return result[::-1]
