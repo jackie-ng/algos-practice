@@ -1,3 +1,4 @@
+# Kruskal
 class Edge:
     def __init__(self, point1, point2, cost):
         self.point1 = point1
