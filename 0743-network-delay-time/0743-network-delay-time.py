@@ -1,30 +1,29 @@
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         # Dijkstra: O(E * logV)
-
-        graph = defaultdict(list)
+        
+        # Construct adjacency list
+        adj = defaultdict(list)
         for src, dst, c in times:
-            graph[src].append((dst, c)) 
+            adj[src].append((dst, c)) 
         
         queue = [(0, k)] #(cost, node)
         visited = set()
-        max_cost = 0
+        max_time = 0
             
         while queue:
             #Always pop the min value
-            cost, node = heapq.heappop(queue)
-            if node in visited:
+            time, node = heapq.heappop(queue)
+            if node in visited: # if node is already in visited, skip it
                 continue
                 
             visited.add(node)
             
-            max_cost = max(max_cost, cost)
-            neighbours = graph[node]
+            max_time = max(max_time, time)
             
-            for neighbour in neighbours:
-                new_node, new_cost = neighbour
+            for new_node, new_time in adj[node]:
                 if new_node not in visited:
-                    curr_cost =  cost + new_cost
-                    heapq.heappush(queue, (curr_cost, new_node))
+                    curr_time =  time + new_time
+                    heapq.heappush(queue, (curr_time, new_node))
 
-        return max_cost if len(visited) == n else -1
+        return max_time if len(visited) == n else -1
