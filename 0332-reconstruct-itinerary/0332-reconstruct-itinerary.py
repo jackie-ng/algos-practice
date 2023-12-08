@@ -2,8 +2,7 @@ class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         flightMap = defaultdict(list)
 
-        for ticket in tickets:
-            origin, dest = ticket[0], ticket[1]
+        for origin, dest in tickets:
             flightMap[origin].append(dest)
 
         # sort the itinerary based on the lexical order
