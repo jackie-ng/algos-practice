@@ -8,7 +8,6 @@ class Solution:
         for i in range(len(gas)): # len(gas) = len(cost)
             diff = (gas[i] - cost[i])
             total += diff
-            
             if total < 0:
                 total = 0 # reset total to 0
                 res = i + 1
