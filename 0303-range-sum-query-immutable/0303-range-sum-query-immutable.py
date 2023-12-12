@@ -9,7 +9,7 @@ class NumArray:
 
     def sumRange(self, left: int, right: int) -> int:
         rightSum = self.prefix[right]
-        leftSum = self.prefix[left - 1] if left > 0 else 0
+        leftSum = self.prefix[left - 1] if left > 0 else 0        
         return rightSum - leftSum
 
 # Your NumArray object will be instantiated and called as such:
