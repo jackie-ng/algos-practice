@@ -16,13 +16,13 @@ class UndergroundSystem:
 
     def checkOut(self, id: int, stationName: str, t: int) -> None:
         # Retrieves the check-in information for the customer
-        checkInStation, checkInTime = self.checkInMap.pop(id)
+        startStation, startTime = self.checkInMap.pop(id)
 
         # Forms a tuple representing the route (startStation, endStation)
-        routeName = (checkInStation, stationName)
+        routeName = (startStation, stationName)
 
         # Updates the total time and count for the route
-        self.routeTotalTime[routeName] += t - checkInTime
+        self.routeTotalTime[routeName] += t - startTime
         self.routeCount[routeName] += 1
 
     def getAverageTime(self, startStation: str, endStation: str) -> float:
