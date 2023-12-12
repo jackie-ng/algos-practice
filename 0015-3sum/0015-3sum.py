@@ -2,8 +2,6 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
         nums.sort()
-        # [-4, -1, -1, 0, 1, 2]
-        # [0, 1, 2, 3, 4, 5, 6]
         
         for index, value in enumerate(nums):
             # We don't want to reuse the same value in the same position twice
