@@ -26,7 +26,7 @@ class Solution:
 # Time Complexity:
 # the number of permutations A(m,n) is O(1)
 # We count digit by digit, so it's O(logN)
-
+# https://leetcode.com/problems/numbers-with-repeated-digits/discuss/258212/Share-my-O(logN)-C%2B%2B-DP-solution-with-proof-and-explanation
         L = list(map(int, str(N + 1)))
         n = len(L)
         res = sum(9 * perm(9, i) for i in range(n - 1))
