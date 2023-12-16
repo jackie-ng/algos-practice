@@ -7,3 +7,4 @@ class Solution:
             res += x + y
             heapq.heappush(sticks, x + y)
         return res
+        
