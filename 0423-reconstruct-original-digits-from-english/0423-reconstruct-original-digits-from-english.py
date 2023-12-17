@@ -1,14 +1,14 @@
 class Solution:
     def originalDigits(self, s: str) -> str:
-        cnt = Counter(s)
-        Digits = ["zero","two","four","six","eight","one","three","five","seven","nine"]
-        Corresp = [0,2,4,6,8,1,3,5,7,9]
-        Counters = [Counter(digit) for digit in Digits]
-        Found = [0]*10
-        for it, C in enumerate(Counters):
-            k = min(cnt[x]//C[x] for x in C)
-            for i in C.keys(): C[i] *= k
-            cnt -= C
-            Found[Corresp[it]] = k
-            
-        return "".join([str(i)*Found[i] for i in range(10)])   
+        c = Counter(s)
+        d = {0:'zero', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five', 6:'six', 7:'seven', 8:'eight', 9:'nine'}
+        
+        res = [''] * 10
+        for i in chain(range(0,10,2), range(1,10,2)):
+            cur = Counter(d[i])
+            if not cur - c:
+                k = min(c[x] for x in cur)
+                res[i] = str(i) * k
+                for x in cur: c[x] -= k                  
+
+        return ''.join(res)
