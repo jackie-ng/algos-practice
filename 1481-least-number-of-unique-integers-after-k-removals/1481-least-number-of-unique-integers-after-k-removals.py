@@ -14,6 +14,6 @@ class Solution:
         # heapq.heapify(hp)
         # while k > 0:
         #     k -= heapq.heappop(hp)
-        # # returns the number of unique elements left in the array. 
+        # # returns the number of unique elements left in the array. (len(hq) + (k < 0))
         # # If k is negative after the last heap pop (which means the last popped count was larger than the remaining k), it adds 1 to the result.
         # return (len(hp) + 1) if k < 0 else len(hp)
