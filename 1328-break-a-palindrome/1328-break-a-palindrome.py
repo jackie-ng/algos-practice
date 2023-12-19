@@ -11,3 +11,4 @@ class Solution:
             if palindrome[i] != "a": 
                 return palindrome[:i] + "a" + palindrome[i+1:]
         return palindrome[:-1] + "b" if n > 1 else ""
+    
