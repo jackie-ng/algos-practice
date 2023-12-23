@@ -1,5 +1,18 @@
 class Solution:
     def numDupDigitsAtMostN(self, N: int) -> int:
+        arrayList = list(map(int, str(N + 1)))
+        n = len(arrayList)
+        res = sum(9 * perm(9, i) for i in range(n - 1))
+        visited = set()
+        for i, x in enumerate(arrayList):
+            for y in range(i == 0, x):
+                if y not in visited:
+                    res += perm(9 - i, n - i - 1)
+            if x in visited: 
+                break
+            visited.add(x)
+        return N - res
+
 # Intuition
 # Count res the Number Without Repeated Digit
 # Then the number with repeated digits = N - res
@@ -28,16 +41,3 @@ class Solution:
 # We count digit by digit, so it's O(logN)
 # https://leetcode.com/problems/numbers-with-repeated-digits/discuss/258212/Share-my-O(logN)-C%2B%2B-DP-solution-with-proof-and-explanation
 # https://leetcode.com/problems/numbers-with-repeated-digits/discuss/256866/Python-O(logN)-solution-with-clear-explanation
-        L = list(map(int, str(N + 1)))
-        n = len(L)
-        res = sum(9 * perm(9, i) for i in range(n - 1))
-        s = set()
-        for i, x in enumerate(L):
-            for y in range(i == 0, x):
-                if y not in s:
-                    res += perm(9 - i, n - i - 1)
-            if x in s: break
-            s.add(x)
-        return N - res
-    
-    
