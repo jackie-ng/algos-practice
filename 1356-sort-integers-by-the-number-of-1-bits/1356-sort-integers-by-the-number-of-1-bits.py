@@ -12,5 +12,13 @@ class Solution:
                 mask <<= 1
             return weight
         
+#             weight = 0
+            
+#             while num:
+#                 weight += 1
+#                 num &= (num - 1)
+            
+#             return weight
+        
         arr.sort(key = lambda num: (find_weight(num), num))
         return arr
