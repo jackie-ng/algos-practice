@@ -10,7 +10,6 @@ class Solution:
                 flips += 1
                 status = '0' if c == '0' else '1'
         return flips
-                
 # The first observation is,
 # A[0] will only be flipped if i = 0.
 # So if A[0] is 1 at first, we have to flip at i = 0.
