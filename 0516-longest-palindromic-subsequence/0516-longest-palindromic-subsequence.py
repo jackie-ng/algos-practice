@@ -6,7 +6,7 @@ class Solution:
         res = 0
         
         for i in range(len(s)):
-            for j in range(len(s) - 1, i - 1, -1):
+            for j in range(len(s) - 1, i - 1, -1): # s reversed
                 if s[i] == s[j]:
                     dp[i][j] = 1 if i == j else 2 # i == j => each character is a palindrome itself
                     if i >= 1:
@@ -44,6 +44,9 @@ class Solution:
 #             dfs(i, i + 1) # even length
 
 #         return max(memo.values())
+    
+    
+        
         
 # # LCS Solution
 # class Solution:
