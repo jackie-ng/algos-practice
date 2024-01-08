@@ -1,5 +1,5 @@
 class Solution:
-#    def mincostTickets(self, days: List[int], costs: List[int]) -> int:
+#     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
 #         memo = {}
         
 #         def dfs(i):
@@ -33,6 +33,7 @@ class Solution:
     # which simply means we don't have to spend money, and total costs remains same
             dp = [0 for i in range(days[-1] + 1)]
             dy = set(days)
+            print(dy)
             for i in range(days[-1]+1):
                 if i not in dy: 
                     dp[i]=dp[i-1]
