@@ -6,17 +6,9 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        # hash = set()
-        # while head:
-        #     if head in hash:
-        #         return True
-        #     hash.add(head)
-        #     head = head.next
-        # return False
-        
-        
         if head is None:
             return False
+        
         slow = head
         fast = head.next
         
@@ -26,3 +18,4 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         return True
+        
