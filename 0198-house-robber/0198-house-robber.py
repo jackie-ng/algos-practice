@@ -13,7 +13,6 @@ class Solution:
         # return top_down(0)
         ### Bottom Up ###
 #         rob1, rob2 = 0, 0
-        
 #         # [rob1, rob2, n, n+1,...]
 #         for n in nums:
 #             rob1, rob2 = rob2, max(rob1+n,rob2)
@@ -27,6 +26,7 @@ class Solution:
         dp[1] = max(nums[0],nums[1])
         
         for i in range(2,len(nums)):
+            print(dp)
             dp[i] = max(dp[i-2]+nums[i], dp[i-1])
-        
+
         return max(dp)
