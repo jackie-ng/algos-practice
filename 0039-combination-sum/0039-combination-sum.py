@@ -1,21 +1,19 @@
-class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-   
+class Solution(object):
+    def combinationSum(self, nums, target):
         res = []
         subset = []
         sum = 0
-        
         def backtrack(i, sum):
             if sum == target:
                 res.append(subset[:])
                 return
-            if i >= len(candidates) or sum > target:
+            # if the pointer is out-of-bound or sum larger that target
+            if i >= len(nums) or sum > target:
                 return
+            subset.append(nums[i])
+            backtrack(i, sum+nums[i])
             
-            subset.append(candidates[i])
-            backtrack(i, sum+candidates[i])
             subset.pop()
             backtrack(i+1, sum)
-            
-        backtrack(0, 0)
+        backtrack(0,0)
         return res
