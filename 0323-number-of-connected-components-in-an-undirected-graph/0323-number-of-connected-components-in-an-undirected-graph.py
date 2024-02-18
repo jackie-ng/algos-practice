@@ -11,7 +11,7 @@ class Solution:
             
         def union(n1, n2):
             r1, r2 = find(n1), find(n2)
-            
+            # if r1 and r2 trees are in the same component
             if r1 == r2:
                 return 0
             if rank[r1] > rank[r2]:
@@ -21,6 +21,8 @@ class Solution:
             else:
                 root[r1] = r2
                 rank[r2] += 1
+            
+            # if r1 and r2 trees are in the different components
             return 1
         
         for n1, n2 in edges:
