@@ -9,6 +9,12 @@ class Solution:
         dist = 0
         
         
+        # find a gate
+        for r in range(ROWS):
+            for c in range(COLS):
+                if rooms[r][c] == 0: 
+                    q.append([r, c])
+                    visit.add((r, c))
         def addRoom(r, c):
             if (r < 0 or r == ROWS or
                 c < 0 or c == COLS or
@@ -17,12 +23,6 @@ class Solution:
             visit.add((r, c))
             q.append([r, c])
         
-        # find a gate
-        for r in range(ROWS):
-            for c in range(COLS):
-                if rooms[r][c] == 0: 
-                    q.append([r, c])
-                    visit.add((r, c))
         # q now contains the position of the gate
         while q:
             for i in range(len(q)):
