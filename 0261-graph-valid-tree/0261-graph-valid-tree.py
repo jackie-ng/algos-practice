@@ -3,10 +3,10 @@
 #         if not n:
 #             return True
         
-#         adj = { i:[] for i in range(n) }
-#         for n1, n2 in edges:
-#             adj[n1].append(n2)
-#             adj[n2].append(n1)
+        # adj = { i:[] for i in range(n) }
+        # for n1, n2 in edges:
+        #     adj[n1].append(n2)
+        #     adj[n2].append(n1)
             
 #         visit = set()
 #         def dfs(i, prev):
@@ -64,5 +64,5 @@ class Solution:
             if find(e1) == find(e2):
                 return False
             union(e1, e2)
-        # If we got this far, there's no cycles!
+        # if there's only 1 root and no cycle => satisfy being a tree
         return count == 1
