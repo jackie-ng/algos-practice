@@ -14,8 +14,6 @@ class Solution(object):
         for i in range(len(s)):
             countS[s[i]] = 1 + countS.get(s[i], 0) #0 is a default value if s[i] does not exist in the hashmap
             countT[t[i]] = 1 + countT.get(t[i], 0)
-        print(countT, countS)
-        
         for j in countS:
             if countS[j] != countT.get(j):
                 return False
