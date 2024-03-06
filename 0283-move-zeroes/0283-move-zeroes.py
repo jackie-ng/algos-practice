@@ -1,14 +1,8 @@
-class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        # if nums[i + 1] == 0 and nums[i] != nums[i + 1]:
-        #     num[i], num[i+1] = num[i+1], num[i] 
-        
-        l = 0
-        for r in range(len(nums)):
-            if nums[r] != 0:
-                nums[l], nums[r] = nums[r], nums[l]
-                l += 1
-        return nums
+class Solution(object):
+    def moveZeroes(self, nums):
+        i = count = 0
+        while count < len(nums):
+            if nums[i] == 0: 
+                nums.append(nums.pop(i))
+            else: i += 1
+            count += 1
