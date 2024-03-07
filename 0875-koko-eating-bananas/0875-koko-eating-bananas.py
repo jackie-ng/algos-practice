@@ -1,16 +1,19 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        l, r = 1, max(piles) # try 1 pile/hr to the max(piles)/hr
-        res = r # we're trying to find the minimum => initialize the result to the r -- max(piles). Then work all the way down
-
+        # [3,6,7,11], h = 8
+        # k in the range between [1, 11]
+        # try k in the range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        l, r = 1, max(piles)
+        res = 0
         while l <= r:
-            m = (l + r) // 2 
-            hours = 0 # for this value m, how many hours does it take to eat all of these banana?
-            for p in piles: # go through every pile in the input array piles
-                hours += math.ceil(p / m) # p / k = hours it took, round up using math.ceil(  )
+            m = (l+r)//2
+            hours = 0
+            for i in range(len(piles)):            
+                hours += math.ceil(piles[i] / m) # k = m, hours it takes for Koko to eat. Round up 
+            # print(hours)
             if hours <= h:
-                res = min(res, m)
-                r = m - 1 # set pointer to the smaller amount m - 1 => search for the smaller portion
+                res = m
+                r = m - 1
             else:
-                l = m + 1 # set left pointer to the larger amount => search for the larger portion
-        return res 
+                l = m + 1
+        return res
