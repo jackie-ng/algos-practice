@@ -8,8 +8,8 @@ class Solution:
         while l <= r:
             m = (l+r)//2
             hours = 0
-            for i in range(len(piles)):            
-                hours += math.ceil(piles[i] / m) # k = m, hours it takes for Koko to eat. Round up 
+            for p in piles:            
+                hours += math.ceil(p / m) # k = m, hours it takes for Koko to eat. Round up 
             # print(hours)
             if hours <= h:
                 res = m
