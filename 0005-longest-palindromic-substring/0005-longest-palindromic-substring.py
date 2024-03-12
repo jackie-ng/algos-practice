@@ -34,7 +34,6 @@ class Solution:
                 ans = [i, i + 1]
 
         
-        
         # check for palidrome sub with length > 3
         # the purpose is to expand the length of the palindrome substring
         for diff in range(2, n):
