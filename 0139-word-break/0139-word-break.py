@@ -3,8 +3,9 @@ class Solution:
         dp = [False] * len(s)
         for i in range(len(s)):
             for word in wordDict:
+                
                 # Handle out of bounds case
-                if i < len(word) - 1:
+                if i - len(word) < -1:
                     continue
 
                 if i == len(word) - 1 or dp[i - len(word)]:
@@ -12,3 +13,5 @@ class Solution:
                         dp[i] = True
                         break
         return dp[-1]
+
+    
