@@ -1,5 +1,5 @@
 class Solution:
-    def minimumTotal(self, triangle: List[List[int]]) -> int:
+    def minimumTotalMemo(self, triangle: List[List[int]]) -> int:
         n = len(triangle)  # Get the number of rows (n) in the triangle
 
         # Initialize a memoization dictionary to store minimum sums for subproblems
@@ -34,3 +34,32 @@ class Solution:
 
         # Start the recursion from the top cell (row 0, col 0)
         return dfs(0, 0)
+    
+    def minimumTotal(self, triangle: List[List[int]]) -> int:
+        """
+        Calculates the minimum path sum from top to bottom in the given triangle using DP tabulation.
+
+        Args:
+          triangle: A 2D list representing the triangle, where each row is a list of integers.
+
+        Returns:
+          The minimum path sum from top to bottom.
+        """
+
+        n = len(triangle)  # Get the number of rows (n) in the triangle
+
+        # DP table to store minimum sums for reaching each row
+        dp = [float('inf')] * (n + 1)  # Extra row to handle edge cases
+
+        # Base case: Last row elements are their own minimum sums (avoiding out-of-bounds)
+        for i in range(n):
+            dp[i] = triangle[n - 1][i]
+
+        # Iterate from bottom-up (excluding the last row)
+        for row in range(n - 2, -1, -1):
+            for col in range(len(triangle[row])):
+                # Minimum sum to reach the current cell from the row below
+                dp[col] = min(dp[col], dp[col + 1]) + triangle[row][col]
+
+        # Minimum sum for the entire path starts from the top cell (row 0)
+        return dp[0]
