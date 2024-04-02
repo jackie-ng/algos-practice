@@ -1,5 +1,5 @@
 class Solution:
-    def minFallingPathSum(self, matrix: List[List[int]]) -> int:
+    def minFallingPathSumMemo(self, matrix: List[List[int]]) -> int:
         n = len(matrix)
         memo = {}
         def dfs(row, col):
@@ -26,4 +26,20 @@ class Solution:
         for col in range(n):
             min_sum = min(min_sum, dfs(0, col))
             
-        return min_sum
+        return min_sum 
+    
+    def minFallingPathSum(self, matrix: List[List[int]]) -> int:
+        n = len(matrix)
+        dp = [[float('inf')] * n for _ in range(n)]
+        
+        # Base case: First row elements are their own minimum sums
+        for i in range(n):
+            dp[0][i] = matrix[0][i]
+        # Iterate through the matrix from row 1 onwards
+        for row in range(1, n):
+            for col in range(n):
+                up = dp[row-1][col]
+                left_diag = dp[row-1][col-1] if col > 0 else float('inf')
+                right_diag = dp[row-1][col+1] if col < n-1 else float('inf')
+                dp[row][col] = min(up, left_diag, right_diag) + matrix[row][col]
+        return min(dp[-1])
