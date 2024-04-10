@@ -5,14 +5,11 @@ class Solution:
             for word in wordDict:
                 wordStart = i - len(word)
                 wordEnd = len(word) - 1
-                # Handle out of bounds case
                 if wordStart < -1:
                     continue
-
+                
                 if i == wordEnd or dp[wordStart]:
-                    if s[wordStart + 1:i + 1] == word:
+                    if s[wordStart+1 : i+1] == word:
                         dp[i] = True
                         break
         return dp[-1]
-
-    
