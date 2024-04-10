@@ -1,10 +1,5 @@
-class Solution(object):
-    def wordBreak(self, s, wordDict):
-        """
-        :type s: str
-        :type wordDict: List[str]
-        :rtype: List[str]
-        """
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         memo = {}
         def wordsEndingIn(i):
             if i == len(s):
