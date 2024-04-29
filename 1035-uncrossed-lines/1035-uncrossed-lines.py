@@ -19,6 +19,7 @@ class Solution(object):
             return memo[(i, j)]
 
         return solve(n1, n2)
+    
     def maxUncrossedLines(self, nums1, nums2):
         n1 = len(nums1)
         n2 = len(nums2)
