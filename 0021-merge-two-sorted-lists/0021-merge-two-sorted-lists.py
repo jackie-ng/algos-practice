@@ -5,14 +5,7 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        # # base case: recursion stops when we reach the end of the linkedlist 
-        # if not list1 or list2 and list2.val < list1.val:
-        #     list1, list2 = list2, list1
-        # # recursion case: 
-        # if list1:
-        #     list1.next = self.mergeTwoLists(list1.next, list2)
-        # return list1
-    
+        ### 1. Iterative
         dummy = ListNode()
         tail = dummy
         
@@ -23,7 +16,16 @@ class Solution:
             else:
                 tail.next = list2
                 list2 = list2.next
+            # tail pointer is updated regardless
             tail = tail.next
         tail.next = list1 if list1 else list2
         return dummy.next
 
+        ### 2. Recursion
+        ## base case: recursion stops when we reach the end of the linkedlist 
+        # if not list1 or list2 and list2.val < list1.val:
+        #     list1, list2 = list2, list1
+        # # recursion case: 
+        # if list1:
+        #     list1.next = self.mergeTwoLists(list1.next, list2)
+        # return list1
