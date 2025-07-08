@@ -5,34 +5,29 @@
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        # Check if the input list of linked lists is empty
-        if not lists or len(lists) == 0:
-            return None
-        
-        while len(lists) > 1:
-            mergedList = []
+        def merge2Lists(l1, l2):
+            dummy = ListNode()
+            head = dummy  # Pointer to build the merged list
+            while l1 and l2:
+                if l1.val <= l2.val:
+                    head.next = l1
+                    l1 = l1.next
+                else:
+                    head.next = l2
+                    l2 = l2.next
+                head = head.next  # Move head forward
             
-            for i in range(0, len(lists), 2):
-                l1 = lists[i]
-                l2 = lists[i + 1] if (i + 1) < len(lists) else None # Check if the second list exists / inbound
-                mergedList.append(self.mergeList(l1, l2))
-            # Update the lists variable with the merged lists
-            lists = mergedList
-        return lists[0]
-    
-    def mergeList(self, l1, l2):
-        dummy = ListNode()
-        tail = dummy
-        
-        while l1 and l2:
-            if l1.val < l2.val:
-                tail.next = l1
-                l1 = l1.next
+            # Attach the remaining part of l1 or l2
+            if l1:
+                head.next = l1
             else:
-                tail.next = l2
-                l2 = l2.next
-            tail = tail.next
+                head.next = l2
+                
+            return dummy.next  # Return the next node to skip dummy node
         
-        if l1: tail.next = l1
-        if l2: tail.next = l2
-        return dummy.next
+        # Merge each list one by one
+        mergeList = None
+        for l in lists:
+            mergeList = merge2Lists(l, mergeList)
+            
+        return mergeList
