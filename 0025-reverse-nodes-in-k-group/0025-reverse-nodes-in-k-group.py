@@ -26,7 +26,6 @@ class Solution:
                 prev = curr
                 curr = tmp
                 
-            # Update pointers to connect the reversed group
             #kth -- 1st node in the group
             tmp = groupPrev.next # 1st node in the group, kth is the last node in the group
             groupPrev.next = kth
@@ -41,8 +40,4 @@ class Solution:
             curr = curr.next
             k -= 1
         return curr
-    
-   
-
-                
     
