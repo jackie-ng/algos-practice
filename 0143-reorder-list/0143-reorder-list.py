@@ -25,9 +25,9 @@ class Solution:
             fast = fast.next.next
             
         # reverse second half
-        secondHalf = slow.next
-        slow.next = None
-        prev = None
+        secondHalf = slow.next # now second half starts from slow.next
+        slow.next = None # set slow.next = None
+        prev = None #dummy node prev = Non
         while secondHalf:
             # For each current node, save its neighbours
             temp = secondHalf.next
