@@ -6,6 +6,7 @@ initial commit
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/jackie-ng/algos-practice/tree/master/0001-two-sum) |
+| [0033-search-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0033-search-in-rotated-sorted-array) |
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
 | [0128-longest-consecutive-sequence](https://github.com/jackie-ng/algos-practice/tree/master/0128-longest-consecutive-sequence) |
 | [0217-contains-duplicate](https://github.com/jackie-ng/algos-practice/tree/master/0217-contains-duplicate) |
@@ -107,4 +108,8 @@ initial commit
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/jackie-ng/algos-practice/tree/master/0002-add-two-numbers) |
+## Binary Search
+|  |
+| ------- |
+| [0033-search-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0033-search-in-rotated-sorted-array) |
 <!---LeetCode Topics End-->
