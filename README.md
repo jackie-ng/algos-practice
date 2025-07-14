@@ -12,6 +12,7 @@ initial commit
 | [0217-contains-duplicate](https://github.com/jackie-ng/algos-practice/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
+| [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 ## Hash Table
 |  |
 | ------- |
@@ -112,4 +113,5 @@ initial commit
 |  |
 | ------- |
 | [0033-search-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0033-search-in-rotated-sorted-array) |
+| [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 <!---LeetCode Topics End-->
