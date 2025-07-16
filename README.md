@@ -15,6 +15,7 @@ initial commit
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
+| [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
 ## Hash Table
 |  |
 | ------- |
@@ -118,6 +119,7 @@ initial commit
 | [0074-search-a-2d-matrix](https://github.com/jackie-ng/algos-practice/tree/master/0074-search-a-2d-matrix) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
+| [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
 ## Matrix
 |  |
 | ------- |
