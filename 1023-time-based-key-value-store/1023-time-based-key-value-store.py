@@ -3,7 +3,45 @@
 
 - implement TimeMap class
 
+Is the key in the store?
+  ├── No: Return "".
+  └── Yes:
+        Is the list of timestamps empty?
+        ├── Yes: Return "".
+        └── No:
+              Perform binary search on timestamps:
+              │
+              ├── If `timestamp` < all stored timestamps:
+              │     │→ Return "" (no valid value).
+              │
+              ├── If `timestamp` >= last timestamp:
+              │     │→ Return the last value (most recent).
+              │
+              └── Else:
+                    │→ Use binary search to find the largest `timestamp_prev <= timestamp`.
+                    │→ Return the corresponding value.
+
 """
+# class TimeMap:
+#     def __init__(self):
+#         self.store = {}  # key: list of (timestamp, value)
+
+#     def set(self, key: str, value: str, timestamp: int) -> None:
+#         if key not in self.store:
+#             self.store[key] = []
+#         self.store[key].append((timestamp, value))
+
+#     def get(self, key: str, timestamp: int) -> str:
+#         if key not in self.store:
+#             return ""
+#         # Iterate from the end to find the largest timestamp_prev <= timestamp
+#         for i in range(len(self.store[key])-1, -1, -1):
+#             if self.store[key][i][0] <= timestamp:
+#                 return self.store[key][i][1]
+#         return ""
+#         # set: O(1) per operation (append to list).
+#         # get: O(n) per operation (linear scan in worst case).
+
 class TimeMap:
     def __init__(self):
         self.store = defaultdict(list)  # key: list of (timestamp, value) pairs
