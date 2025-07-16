@@ -6,6 +6,7 @@ initial commit
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/jackie-ng/algos-practice/tree/master/0001-two-sum) |
+| [0004-median-of-two-sorted-arrays](https://github.com/jackie-ng/algos-practice/tree/master/0004-median-of-two-sorted-arrays) |
 | [0033-search-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0033-search-in-rotated-sorted-array) |
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/jackie-ng/algos-practice/tree/master/0074-search-a-2d-matrix) |
@@ -47,6 +48,7 @@ initial commit
 ## Divide and Conquer
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/jackie-ng/algos-practice/tree/master/0004-median-of-two-sorted-arrays) |
 | [0023-merge-k-sorted-lists](https://github.com/jackie-ng/algos-practice/tree/master/0023-merge-k-sorted-lists) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 ## Heap (Priority Queue)
@@ -118,6 +120,7 @@ initial commit
 ## Binary Search
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/jackie-ng/algos-practice/tree/master/0004-median-of-two-sorted-arrays) |
 | [0033-search-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0033-search-in-rotated-sorted-array) |
 | [0074-search-a-2d-matrix](https://github.com/jackie-ng/algos-practice/tree/master/0074-search-a-2d-matrix) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0153-find-minimum-in-rotated-sorted-array) |
