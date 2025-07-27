@@ -1,14 +1,25 @@
 class Solution:
-    def dailyTemperatures(self, temp: List[int]) -> List[int]:
-        # Monotonic Decreasing Stack: stack in decreasing order
-        res = [0] * len(temp)
-        stack = [] # pair value: [i, temp]
+    """
+    1. Initialize an empty stack and an answer array filled with zeros.
+    2. Iterate through each temperature with its index:
+    │
+    ├── While stack is not empty and current temperature > temperature at stack's top index:
+    │     │→ Pop the top index from the stack.
+    │     │→ Calculate days waited: current index - popped index.
+    │     │→ Update answer[popped index] = days waited.
+    │
+    └── Push current index onto the stack.
+    3. Return the answer array.
+    """
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        stack = []
+        answer = [0] * len(temperatures)
         
-        for i, t in enumerate(temp):
-            # check if stack is empty and the value of the current t is > stack[-1]
-            while stack and t > stack[-1][1]:
-                stackInd, stackT = stack.pop()
-                # add the index differences to the corresponding position in res
-                res[stackInd] = (i - stackInd)
-            stack.append([i, t])
-        return res
+        for i, temp in enumerate(temperatures):
+            while stack and temp > temperatures[stack[-1]]:
+                prev_index = stack.pop()
+                answer[prev_index] = i - prev_index
+            stack.append(i)
+        
+        return answer
+            
