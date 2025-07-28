@@ -44,6 +44,7 @@ initial commit
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
+| [0125-valid-palindrome](https://github.com/jackie-ng/algos-practice/tree/master/0125-valid-palindrome) |
 | [0242-valid-anagram](https://github.com/jackie-ng/algos-practice/tree/master/0242-valid-anagram) |
 | [1023-time-based-key-value-store](https://github.com/jackie-ng/algos-practice/tree/master/1023-time-based-key-value-store) |
 ## Divide and Conquer
@@ -96,6 +97,7 @@ initial commit
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/jackie-ng/algos-practice/tree/master/0019-remove-nth-node-from-end-of-list) |
+| [0125-valid-palindrome](https://github.com/jackie-ng/algos-practice/tree/master/0125-valid-palindrome) |
 | [0143-reorder-list](https://github.com/jackie-ng/algos-practice/tree/master/0143-reorder-list) |
 ## Stack
 |  |
