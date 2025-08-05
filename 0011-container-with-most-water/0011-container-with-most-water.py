@@ -1,26 +1,30 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        # Two Pointers
-        res = 0
-        l, r = 0, len(height) - 1
-        
-        while l < r:
-            area = (r - l) * min(height[l], height[r])
-            res = max(res, area)
-            
-            if height[l] < height[r]:
-                l += 1
-            else: # height[l] > height[r]
-                r -= 1
-        return res
-            
-#         # Brute Force
-#         res = 0
-        
-#         for l in range(len(height)):
-#             for r in range(l+1, len(height)):
-#                 area = (r - l) * min(height[l], height[r])
-#                 res = max(res, area)
-                
-#         return res
-        
+        left, right = 0, len(height)-1
+        max_area = -1
+        while left <= right:
+            h = min(height[left], height[right])
+            w = right - left
+            max_area = max(max_area, h*w)
+            if height[left] < height[right]:
+                left += 1
+            else:
+                right -= 1
+        return max_area
+"""
+1. Initialize two pointers: left = 0, right = len(height) - 1.
+2. Initialize max_area = 0.
+3. While left < right:
+   │
+   ├── Calculate current area: min(height[left], height[right]) * (right - left).
+   │
+   ├── Update max_area if current area is larger.
+   │
+   ├── Move the pointer pointing to the shorter line inward:
+   │     ├── If height[left] < height[right]:
+   │     │     │→ left += 1
+   │     └── Else:
+   │           │→ right -= 1
+   │
+   └── Return max_area.
+"""
