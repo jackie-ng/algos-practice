@@ -7,6 +7,7 @@ initial commit
 | ------- |
 | [0001-two-sum](https://github.com/jackie-ng/algos-practice/tree/master/0001-two-sum) |
 | [0004-median-of-two-sorted-arrays](https://github.com/jackie-ng/algos-practice/tree/master/0004-median-of-two-sorted-arrays) |
+| [0011-container-with-most-water](https://github.com/jackie-ng/algos-practice/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/jackie-ng/algos-practice/tree/master/0015-3sum) |
 | [0033-search-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0033-search-in-rotated-sorted-array) |
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
@@ -98,6 +99,7 @@ initial commit
 ## Two Pointers
 |  |
 | ------- |
+| [0011-container-with-most-water](https://github.com/jackie-ng/algos-practice/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/jackie-ng/algos-practice/tree/master/0015-3sum) |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/jackie-ng/algos-practice/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0125-valid-palindrome](https://github.com/jackie-ng/algos-practice/tree/master/0125-valid-palindrome) |
@@ -142,4 +144,8 @@ initial commit
 |  |
 | ------- |
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
+## Greedy
+|  |
+| ------- |
+| [0011-container-with-most-water](https://github.com/jackie-ng/algos-practice/tree/master/0011-container-with-most-water) |
 <!---LeetCode Topics End-->
