@@ -7,6 +7,7 @@ initial commit
 | ------- |
 | [0001-two-sum](https://github.com/jackie-ng/algos-practice/tree/master/0001-two-sum) |
 | [0004-median-of-two-sorted-arrays](https://github.com/jackie-ng/algos-practice/tree/master/0004-median-of-two-sorted-arrays) |
+| [0015-3sum](https://github.com/jackie-ng/algos-practice/tree/master/0015-3sum) |
 | [0033-search-in-rotated-sorted-array](https://github.com/jackie-ng/algos-practice/tree/master/0033-search-in-rotated-sorted-array) |
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/jackie-ng/algos-practice/tree/master/0074-search-a-2d-matrix) |
@@ -36,6 +37,7 @@ initial commit
 ## Sorting
 |  |
 | ------- |
+| [0015-3sum](https://github.com/jackie-ng/algos-practice/tree/master/0015-3sum) |
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
 | [0217-contains-duplicate](https://github.com/jackie-ng/algos-practice/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/jackie-ng/algos-practice/tree/master/0242-valid-anagram) |
@@ -96,6 +98,7 @@ initial commit
 ## Two Pointers
 |  |
 | ------- |
+| [0015-3sum](https://github.com/jackie-ng/algos-practice/tree/master/0015-3sum) |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/jackie-ng/algos-practice/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0125-valid-palindrome](https://github.com/jackie-ng/algos-practice/tree/master/0125-valid-palindrome) |
 | [0143-reorder-list](https://github.com/jackie-ng/algos-practice/tree/master/0143-reorder-list) |
