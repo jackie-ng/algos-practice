@@ -111,12 +111,14 @@ initial commit
 |  |
 | ------- |
 | [0143-reorder-list](https://github.com/jackie-ng/algos-practice/tree/master/0143-reorder-list) |
+| [0225-implement-stack-using-queues](https://github.com/jackie-ng/algos-practice/tree/master/0225-implement-stack-using-queues) |
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 ## Design
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/jackie-ng/algos-practice/tree/master/0146-lru-cache) |
+| [0225-implement-stack-using-queues](https://github.com/jackie-ng/algos-practice/tree/master/0225-implement-stack-using-queues) |
 | [1023-time-based-key-value-store](https://github.com/jackie-ng/algos-practice/tree/master/1023-time-based-key-value-store) |
 ## Doubly-Linked List
 |  |
@@ -156,6 +158,7 @@ initial commit
 ## Queue
 |  |
 | ------- |
+| [0225-implement-stack-using-queues](https://github.com/jackie-ng/algos-practice/tree/master/0225-implement-stack-using-queues) |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 ## Simulation
 |  |
