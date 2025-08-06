@@ -17,6 +17,7 @@ initial commit
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/jackie-ng/algos-practice/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0217-contains-duplicate](https://github.com/jackie-ng/algos-practice/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
+| [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
@@ -44,6 +45,7 @@ initial commit
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
 | [0217-contains-duplicate](https://github.com/jackie-ng/algos-practice/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/jackie-ng/algos-practice/tree/master/0242-valid-anagram) |
+| [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 ## String
 |  |
