@@ -21,6 +21,7 @@ initial commit
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
+| [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 ## Hash Table
 |  |
 | ------- |
@@ -111,6 +112,7 @@ initial commit
 | ------- |
 | [0143-reorder-list](https://github.com/jackie-ng/algos-practice/tree/master/0143-reorder-list) |
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
+| [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 ## Design
 |  |
 | ------- |
@@ -151,4 +153,12 @@ initial commit
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/jackie-ng/algos-practice/tree/master/0011-container-with-most-water) |
+## Queue
+|  |
+| ------- |
+| [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
+## Simulation
+|  |
+| ------- |
+| [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 <!---LeetCode Topics End-->
