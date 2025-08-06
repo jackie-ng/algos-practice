@@ -1,15 +1,13 @@
 class Solution:
-    """
-    @param intervals: an array of meeting time intervals
-    @return: if a person could attend all meetings
-    """
-    def canAttendMeetings(self, intervals):
-        intervals.sort(key=lambda i:i[0]) # sort based on the start meeting time
-        # loop through intervals array to check every single meeting
-        for i in range(1, len(intervals)):
-            i1 = intervals[i-1] # previous meeting
-            i2 = intervals[i] # current meeting
-            # if the end time of previous meeting > the start time of current meeting => False
-            if i1[1] > i2[0]: 
+    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
+        # a person can attend all meetings if there are no overlapse
+        # condition to overlap: when the end of this meeting > the starting of next meeting
+        #-> as we can see, its very important to get the right order of the meeting because we would always compare the end of meeting X with the starting of meeting X +1 
+        # -> we need to sort meeting based on starting times
+        if len(intervals) == 0 or len(intervals) == 1:
+            return True
+        intervals = sorted(intervals, key = lambda x:x[0])
+        for i in range(len(intervals)-1):
+            if intervals[i][1] > intervals[i+1][0]:
                 return False
         return True
