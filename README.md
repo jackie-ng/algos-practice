@@ -20,6 +20,7 @@ initial commit
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
 | [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
+| [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
@@ -48,6 +49,7 @@ initial commit
 | [0242-valid-anagram](https://github.com/jackie-ng/algos-practice/tree/master/0242-valid-anagram) |
 | [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
+| [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 ## String
 |  |
 | ------- |
@@ -158,6 +160,7 @@ initial commit
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/jackie-ng/algos-practice/tree/master/0011-container-with-most-water) |
+| [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 ## Queue
 |  |
 | ------- |
@@ -167,4 +170,8 @@ initial commit
 |  |
 | ------- |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 <!---LeetCode Topics End-->
