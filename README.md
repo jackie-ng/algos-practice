@@ -22,6 +22,7 @@ initial commit
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
+| [0724-find-pivot-index](https://github.com/jackie-ng/algos-practice/tree/master/0724-find-pivot-index) |
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
@@ -89,6 +90,7 @@ initial commit
 | ------- |
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
+| [0724-find-pivot-index](https://github.com/jackie-ng/algos-practice/tree/master/0724-find-pivot-index) |
 ## Linked List
 |  |
 | ------- |
