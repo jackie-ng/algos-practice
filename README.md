@@ -25,6 +25,7 @@ initial commit
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
+| [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Hash Table
 |  |
 | ------- |
@@ -50,6 +51,7 @@ initial commit
 | [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
+| [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## String
 |  |
 | ------- |
@@ -68,6 +70,7 @@ initial commit
 | ------- |
 | [0023-merge-k-sorted-lists](https://github.com/jackie-ng/algos-practice/tree/master/0023-merge-k-sorted-lists) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
+| [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Bucket Sort
 |  |
 | ------- |
@@ -148,6 +151,7 @@ initial commit
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
 | [1023-time-based-key-value-store](https://github.com/jackie-ng/algos-practice/tree/master/1023-time-based-key-value-store) |
+| [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Matrix
 |  |
 | ------- |
@@ -174,4 +178,8 @@ initial commit
 |  |
 | ------- |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
+## Line Sweep
+|  |
+| ------- |
+| [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 <!---LeetCode Topics End-->
