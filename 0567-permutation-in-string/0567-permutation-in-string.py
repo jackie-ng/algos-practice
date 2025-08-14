@@ -1,26 +1,37 @@
+from collections import defaultdict
+
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        n1 = len(s1)
-        n2 = len(s2)
+        if len(s1) > len(s2):
+            return False
+    
+        s1_count = [0] * 26
+        window_count = [0] * 26
         
-        if n1 > n2: return False
-
-        s1Count = [0] * 26
-        s2Count = [0] * 26
+        # Initialize the frequency count for s1
+        for char in s1:
+            s1_count[ord(char) - ord('a')] += 1
         
-        # initial values for first set of window
-        for i in range(n1):
-            s1Count[ord(s1[i]) - ord('a')] += 1
-            s2Count[ord(s2[i]) - ord('a')] += 1
-
-        for i in range(n2-n1):               # n2-n1 is the number of slides
-            if s1Count == s2Count:
+        # Initialize the sliding window with the first len(s1) characters of s2
+        for i in range(len(s1)):
+            window_count[ord(s2[i]) - ord('a')] += 1
+        
+        # Check if the initial window is a permutation of s1
+        if window_count == s1_count:
+            return True
+        
+        # Slide the window through s2
+        for i in range(len(s1), len(s2)):
+            # Remove the leftmost character of the previous window
+            left_char = s2[i - len(s1)]
+            window_count[ord(left_char) - ord('a')] -= 1
+            
+            # Add the new rightmost character to the window
+            right_char = s2[i]
+            window_count[ord(right_char) - ord('a')] += 1
+            
+            # Check if the current window matches s1's frequency count
+            if window_count == s1_count:
                 return True
-            
-            # reduce leaving char count
-            s2Count[ord(s2[i]) - ord('a')] -= 1
-            
-            # increase introduced char count
-            s2Count[ord(s2[i+n1]) - ord('a')] += 1
-
-        return s1Count == s2Count   
+        
+        return False
