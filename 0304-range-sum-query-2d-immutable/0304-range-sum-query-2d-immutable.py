@@ -1,25 +1,28 @@
 class NumMatrix:
 
     def __init__(self, matrix: List[List[int]]):
-        ROWS, COLS = len(matrix), len(matrix[0])
-        self.sumMat = [[0] * (COLS + 1) for r in range(ROWS + 1)]
-        
-        for r in range(ROWS):
-            prefix = 0
-            for c in range(COLS):
-                prefix += matrix[r][c]
-                above = self.sumMat[r][c + 1]
-                self.sumMat[r + 1][c + 1] = prefix + above
+        if not matrix or not matrix[0]:
+            self.prefix = [[]]
+            return
+        rows, cols = len(matrix), len(matrix[0])
+        self.prefix = [[0] * (cols+1) for _ in range(rows+1)]
+        for i in range(1, rows+1):
+            for j in range(1, cols+1):
+                self.prefix[i][j] = matrix[i-1][j-1] + self.prefix[i-1][j] + self.prefix[i][j-1] - self.prefix[i-1][j-1]
 
-    def sumRegion(self, r1: int, c1: int, r2: int, c2: int) -> int:
-        r1, c1, r2, c2 = r1 + 1, c1 + 1, r2 + 1, c2 + 1 
+    def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+        return self.prefix[row2+1][col2+1] - self.prefix[row1][col2+1] - self.prefix[row2+1][col1] + self.prefix[row1][col1]
         
-        bottomRight = self.sumMat[r2][c2]
-        above = self.sumMat[r1 - 1][c2]
-        left = self.sumMat[r2][c1 - 1]
-        topLeft = self.sumMat[r1 - 1][c1 - 1]
-        
-        return bottomRight - above - left + topLeft
+    # def __init__(self, matrix: List[List[int]]):
+    #     self.matrix = matrix
+
+    # def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+    #     total = 0
+    #     for i in range(row1, row2+1):
+    #         for j in range(col1, col2+1):
+    #             total += self.matrix[i][j]
+    #     return total
+
 
 # Your NumMatrix object will be instantiated and called as such:
 # obj = NumMatrix(matrix)
