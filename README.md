@@ -20,6 +20,7 @@ initial commit
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
 | [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
+| [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 | [0560-subarray-sum-equals-k](https://github.com/jackie-ng/algos-practice/tree/master/0560-subarray-sum-equals-k) |
@@ -96,6 +97,7 @@ initial commit
 | ------- |
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
+| [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
 | [0560-subarray-sum-equals-k](https://github.com/jackie-ng/algos-practice/tree/master/0560-subarray-sum-equals-k) |
 | [0724-find-pivot-index](https://github.com/jackie-ng/algos-practice/tree/master/0724-find-pivot-index) |
 ## Linked List
@@ -139,6 +141,7 @@ initial commit
 | [0146-lru-cache](https://github.com/jackie-ng/algos-practice/tree/master/0146-lru-cache) |
 | [0225-implement-stack-using-queues](https://github.com/jackie-ng/algos-practice/tree/master/0225-implement-stack-using-queues) |
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
+| [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
 | [1023-time-based-key-value-store](https://github.com/jackie-ng/algos-practice/tree/master/1023-time-based-key-value-store) |
 ## Doubly-Linked List
 |  |
@@ -168,6 +171,7 @@ initial commit
 |  |
 | ------- |
 | [0074-search-a-2d-matrix](https://github.com/jackie-ng/algos-practice/tree/master/0074-search-a-2d-matrix) |
+| [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
 ## Monotonic Stack
 |  |
 | ------- |
