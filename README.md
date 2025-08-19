@@ -136,6 +136,7 @@ initial commit
 ## Stack
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/jackie-ng/algos-practice/tree/master/0094-binary-tree-inorder-traversal) |
 | [0143-reorder-list](https://github.com/jackie-ng/algos-practice/tree/master/0143-reorder-list) |
 | [0225-implement-stack-using-queues](https://github.com/jackie-ng/algos-practice/tree/master/0225-implement-stack-using-queues) |
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
@@ -213,13 +214,16 @@ initial commit
 ## Tree
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/jackie-ng/algos-practice/tree/master/0094-binary-tree-inorder-traversal) |
 | [0543-diameter-of-binary-tree](https://github.com/jackie-ng/algos-practice/tree/master/0543-diameter-of-binary-tree) |
 ## Depth-First Search
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/jackie-ng/algos-practice/tree/master/0094-binary-tree-inorder-traversal) |
 | [0543-diameter-of-binary-tree](https://github.com/jackie-ng/algos-practice/tree/master/0543-diameter-of-binary-tree) |
 ## Binary Tree
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/jackie-ng/algos-practice/tree/master/0094-binary-tree-inorder-traversal) |
 | [0543-diameter-of-binary-tree](https://github.com/jackie-ng/algos-practice/tree/master/0543-diameter-of-binary-tree) |
 <!---LeetCode Topics End-->
