@@ -4,38 +4,42 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+"""
+The height of a node is the number of edges on the longest path from the node to a leaf.
+The diameter of the tree is the maximum value of left_height + right_height for any node.
+"""
 class Solution:
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        res = [0]
-        
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:      
+        # Recursion 
+        self.diameter = 0
         def dfs(node):
             if not node:
                 return 0
-            # nonlocal res
-
             left = dfs(node.left)
             right = dfs(node.right)
-            
-            res[0] = max(res[0], left + right)
-            
-            return max(left, right) + 1
-        
+            self.diameter = max(self.diameter, (left + right))
+            return 1 + max(left, right)
         dfs(root)
-        return res[0]
+        return self.diameter
 
-#             res = [0]
-    
-#             def dfs(root):
-#                 if not root:
-#                     return -1 #not set to 0 => make the math work
-#                 left = dfs(root.left)
-#                 right = dfs(root.right)
-                
-#                 # 2 + left + right
-#                 res[0] = max(res[0], 2 + left + right)
-                
-#                 return 1 + max(left, right)
-            
-#             dfs(root)
-            
-#             return res[0]
+        # Iterative
+        if not root:
+            return 0
+        diameter = 0
+        stack = [root, False]
+        depths = {}
+        while stack:
+            node, visited = stack.pop()
+            if not node:
+                continue
+            if visited:
+                left = depths.get(node.left, 0)
+                right = depths.get(node.right, 0)
+                depths[node] = 1 + max(left, right)
+                diameter = max(diameter, left + right)
+            else:
+                # Post-order: push node back after children
+                stack.append((node, True))
+                stack.append((node.right, False))
+                stack.append((node.left, False))
+        return diameter
