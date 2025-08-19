@@ -210,4 +210,16 @@ initial commit
 | [0424-longest-repeating-character-replacement](https://github.com/jackie-ng/algos-practice/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/jackie-ng/algos-practice/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0567-permutation-in-string](https://github.com/jackie-ng/algos-practice/tree/master/0567-permutation-in-string) |
+## Tree
+|  |
+| ------- |
+| [0543-diameter-of-binary-tree](https://github.com/jackie-ng/algos-practice/tree/master/0543-diameter-of-binary-tree) |
+## Depth-First Search
+|  |
+| ------- |
+| [0543-diameter-of-binary-tree](https://github.com/jackie-ng/algos-practice/tree/master/0543-diameter-of-binary-tree) |
+## Binary Tree
+|  |
+| ------- |
+| [0543-diameter-of-binary-tree](https://github.com/jackie-ng/algos-practice/tree/master/0543-diameter-of-binary-tree) |
 <!---LeetCode Topics End-->
