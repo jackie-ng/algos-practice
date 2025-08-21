@@ -4,26 +4,35 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+"""
+If both are None → equal at this position.
+If exactly one is None → not equal.
+If both exist but values differ → not equal.
+Otherwise, both exist and values match 
+→ recursively/iteratively compare left and right children.
+"""
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        # if not p and not q:
+        # # Recursion
+        # if not q and not p:
         #     return True
         # if not q or not p:
         #     return False
-        # if p.val != q.val:
+        # if q and p and q.val != p.val:
         #     return False
-        # return self.isSameTree(p.right, q.right) and \
-        #        self.isSameTree(p.left, q.left)
-        
+        # if q and p and q.val == p.val:
+        #     return self.isSameTree(q.left, p.left) and self.isSameTree(q.right, p.right)
+        # Iterative
         stack = [(p, q)]
-        
         while stack:
-            (p, q) = stack.pop()
-            if p and q and p.val == q.val:
-                stack.extend([
-                    (p.left, q.left),
-                    (p.right, q.right)
-                ])
-            elif p or q:
+            subtreeQ, subtreeP = stack.pop()
+            if not subtreeQ and not subtreeP:
+                continue
+            if not subtreeQ or not subtreeP:
                 return False
+            if subtreeQ.val != subtreeP.val:
+                return False
+            if subtreeQ.val == subtreeP.val:
+                stack.append((subtreeQ.left, subtreeP.left))
+                stack.append((subtreeQ.right, subtreeP.right))
         return True
