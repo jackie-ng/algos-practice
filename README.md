@@ -28,6 +28,7 @@ initial commit
 | [0739-daily-temperatures](https://github.com/jackie-ng/algos-practice/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
+| [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Hash Table
@@ -60,6 +61,7 @@ initial commit
 | [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
+| [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## String
 |  |
@@ -78,11 +80,13 @@ initial commit
 | [0004-median-of-two-sorted-arrays](https://github.com/jackie-ng/algos-practice/tree/master/0004-median-of-two-sorted-arrays) |
 | [0023-merge-k-sorted-lists](https://github.com/jackie-ng/algos-practice/tree/master/0023-merge-k-sorted-lists) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
+| [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
 | [0023-merge-k-sorted-lists](https://github.com/jackie-ng/algos-practice/tree/master/0023-merge-k-sorted-lists) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
+| [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Bucket Sort
 |  |
@@ -96,6 +100,7 @@ initial commit
 |  |
 | ------- |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
+| [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -161,6 +166,7 @@ initial commit
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/jackie-ng/algos-practice/tree/master/0002-add-two-numbers) |
+| [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 ## Binary Search
 |  |
 | ------- |
@@ -244,4 +250,8 @@ initial commit
 |  |
 | ------- |
 | [0100-same-tree](https://github.com/jackie-ng/algos-practice/tree/master/0100-same-tree) |
+## Geometry
+|  |
+| ------- |
+| [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 <!---LeetCode Topics End-->
