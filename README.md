@@ -59,6 +59,7 @@ initial commit
 | [0217-contains-duplicate](https://github.com/jackie-ng/algos-practice/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/jackie-ng/algos-practice/tree/master/0242-valid-anagram) |
 | [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
+| [0295-find-median-from-data-stream](https://github.com/jackie-ng/algos-practice/tree/master/0295-find-median-from-data-stream) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 | [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
@@ -85,6 +86,7 @@ initial commit
 |  |
 | ------- |
 | [0023-merge-k-sorted-lists](https://github.com/jackie-ng/algos-practice/tree/master/0023-merge-k-sorted-lists) |
+| [0295-find-median-from-data-stream](https://github.com/jackie-ng/algos-practice/tree/master/0295-find-median-from-data-stream) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
@@ -137,6 +139,7 @@ initial commit
 | [0125-valid-palindrome](https://github.com/jackie-ng/algos-practice/tree/master/0125-valid-palindrome) |
 | [0143-reorder-list](https://github.com/jackie-ng/algos-practice/tree/master/0143-reorder-list) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/jackie-ng/algos-practice/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0295-find-median-from-data-stream](https://github.com/jackie-ng/algos-practice/tree/master/0295-find-median-from-data-stream) |
 | [0567-permutation-in-string](https://github.com/jackie-ng/algos-practice/tree/master/0567-permutation-in-string) |
 ## Stack
 |  |
@@ -151,6 +154,7 @@ initial commit
 | ------- |
 | [0146-lru-cache](https://github.com/jackie-ng/algos-practice/tree/master/0146-lru-cache) |
 | [0225-implement-stack-using-queues](https://github.com/jackie-ng/algos-practice/tree/master/0225-implement-stack-using-queues) |
+| [0295-find-median-from-data-stream](https://github.com/jackie-ng/algos-practice/tree/master/0295-find-median-from-data-stream) |
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
 | [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
 | [1023-time-based-key-value-store](https://github.com/jackie-ng/algos-practice/tree/master/1023-time-based-key-value-store) |
@@ -254,4 +258,8 @@ initial commit
 |  |
 | ------- |
 | [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
+## Data Stream
+|  |
+| ------- |
+| [0295-find-median-from-data-stream](https://github.com/jackie-ng/algos-practice/tree/master/0295-find-median-from-data-stream) |
 <!---LeetCode Topics End-->
