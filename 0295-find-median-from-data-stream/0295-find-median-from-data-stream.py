@@ -1,40 +1,26 @@
-class MedianFinder:
+import heapq
 
+class MedianFinder:
     def __init__(self):
-        # Initialize two heaps: a max heap (small) and a min heap (large)
-        self.small = []  # Max heap to store the smaller half of elements
-        self.large = []  # Min heap to store the larger half of elements
+        self.lo = []  # max-heap via negatives
+        self.hi = []  # min-heap
 
     def addNum(self, num: int) -> None:
-        # Maintain the balance between the two heaps
+        # Step 1: push to lo (max-heap)
+        heapq.heappush(self.lo, -num)
 
-        # If the number is greater than the smallest element in the large heap
-        if self.large and num > self.large[0]:
-            # Add the number to the large heap
-            heapq.heappush(self.large, num)
-        else:
-            # Add the negation of the number to the small heap (max heap)
-            heapq.heappush(self.small, -1 * num)
+        # Step 2: balance order: top(lo) <= top(hi)
+        if self.hi and (-self.lo[0] > self.hi[0]):
+            x = -heapq.heappop(self.lo)
+            heapq.heappush(self.hi, x)
 
-        # Rebalance the heaps if necessary
-        # Ensure the size difference between the two heaps is at most 1
-        if len(self.small) > len(self.large) + 1:
-            val = -1 * heapq.heappop(self.small)
-            heapq.heappush(self.large, val)
-
-        if len(self.large) > len(self.small) + 1:
-            val = heapq.heappop(self.large)
-            heapq.heappush(self.small, -1 * val)
+        # Step 3: balance sizes: len(lo) >= len(hi) and diff <= 1
+        if len(self.lo) < len(self.hi):
+            heapq.heappush(self.lo, -heapq.heappop(self.hi))
+        elif len(self.lo) - len(self.hi) > 1:
+            heapq.heappush(self.hi, -heapq.heappop(self.lo))
 
     def findMedian(self) -> float:
-        # Find and return the median of the current elements
-
-        if len(self.small) > len(self.large):
-            # If small heap has more elements, return the top element of the small heap
-            return -1 * self.small[0]
-        elif len(self.large) > len(self.small):
-            # If large heap has more elements, return the top element of the large heap
-            return self.large[0]
-        else:
-            # If both heaps have equal size, return the average of the top elements
-            return (-1 * self.small[0] + self.large[0]) / 2
+        if len(self.lo) > len(self.hi):
+            return float(-self.lo[0])
+        return (-self.lo[0] + self.hi[0]) / 2.0
