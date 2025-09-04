@@ -19,6 +19,7 @@ initial commit
 | [0217-contains-duplicate](https://github.com/jackie-ng/algos-practice/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/jackie-ng/algos-practice/tree/master/0238-product-of-array-except-self) |
 | [0252-meeting-rooms](https://github.com/jackie-ng/algos-practice/tree/master/0252-meeting-rooms) |
+| [0286-walls-and-gates](https://github.com/jackie-ng/algos-practice/tree/master/0286-walls-and-gates) |
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
 | [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
@@ -192,6 +193,7 @@ initial commit
 |  |
 | ------- |
 | [0074-search-a-2d-matrix](https://github.com/jackie-ng/algos-practice/tree/master/0074-search-a-2d-matrix) |
+| [0286-walls-and-gates](https://github.com/jackie-ng/algos-practice/tree/master/0286-walls-and-gates) |
 | [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
 | [1036-rotting-oranges](https://github.com/jackie-ng/algos-practice/tree/master/1036-rotting-oranges) |
 ## Monotonic Stack
@@ -266,6 +268,7 @@ initial commit
 | [0100-same-tree](https://github.com/jackie-ng/algos-practice/tree/master/0100-same-tree) |
 | [0133-clone-graph](https://github.com/jackie-ng/algos-practice/tree/master/0133-clone-graph) |
 | [0261-graph-valid-tree](https://github.com/jackie-ng/algos-practice/tree/master/0261-graph-valid-tree) |
+| [0286-walls-and-gates](https://github.com/jackie-ng/algos-practice/tree/master/0286-walls-and-gates) |
 | [0323-number-of-connected-components-in-an-undirected-graph](https://github.com/jackie-ng/algos-practice/tree/master/0323-number-of-connected-components-in-an-undirected-graph) |
 | [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
 | [1036-rotting-oranges](https://github.com/jackie-ng/algos-practice/tree/master/1036-rotting-oranges) |
