@@ -1,38 +1,28 @@
+import collections
+
 class Solution:
     def wallsAndGates(self, rooms: List[List[int]]) -> None:
-        """
-        Do not return anything, modify rooms in-place instead.
-        """
+        if not rooms or not rooms[0]:
+            return
+
         ROWS, COLS = len(rooms), len(rooms[0])
-        visit = set()
+        INF = 2147483647
+        dirs = [(1,0), (-1,0), (0,1), (0,-1)]
+
         q = deque()
-        dist = 0
-        
-        
-        # find a gate
+
+        # 1) Enqueue all gates
         for r in range(ROWS):
             for c in range(COLS):
-                if rooms[r][c] == 0: 
-                    q.append([r, c])
-                    visit.add((r, c))
-        def addRoom(r, c):
-            if (r < 0 or r == ROWS or
-                c < 0 or c == COLS or
-               (r, c) in visit or rooms[r][c] == -1):
-                return
-            visit.add((r, c))
-            q.append([r, c])
-        
-        # q now contains the position of the gate
+                if rooms[r][c] == 0:
+                    q.append((r, c))
+
+        # 2) Multi-source BFS
         while q:
-            for i in range(len(q)):
-                r, c = q.popleft()
-                
-                rooms[r][c] = dist # change the gate to current dist
-                addRoom(r + 1, c) 
-                addRoom(r - 1, c) 
-                addRoom(r, c + 1) 
-                addRoom(r, c - 1)
-            dist += 1
-        
-        
+            r, c = q.popleft()
+            for dr, dc in dirs:
+                nr, nc = r + dr, c + dc
+                # Only expand into INF rooms
+                if 0 <= nr < ROWS and 0 <= nc < COLS and rooms[nr][nc] == INF:
+                    rooms[nr][nc] = rooms[r][c] + 1
+                    q.append((nr, nc))
