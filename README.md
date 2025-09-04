@@ -51,6 +51,7 @@ initial commit
 |  |
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/jackie-ng/algos-practice/tree/master/0128-longest-consecutive-sequence) |
+| [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
 ## Sorting
 |  |
 | ------- |
@@ -235,6 +236,7 @@ initial commit
 | [0100-same-tree](https://github.com/jackie-ng/algos-practice/tree/master/0100-same-tree) |
 | [0543-diameter-of-binary-tree](https://github.com/jackie-ng/algos-practice/tree/master/0543-diameter-of-binary-tree) |
 | [0572-subtree-of-another-tree](https://github.com/jackie-ng/algos-practice/tree/master/0572-subtree-of-another-tree) |
+| [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
 ## Binary Tree
 |  |
 | ------- |
@@ -254,6 +256,7 @@ initial commit
 |  |
 | ------- |
 | [0100-same-tree](https://github.com/jackie-ng/algos-practice/tree/master/0100-same-tree) |
+| [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
 ## Geometry
 |  |
 | ------- |
@@ -262,4 +265,8 @@ initial commit
 |  |
 | ------- |
 | [0295-find-median-from-data-stream](https://github.com/jackie-ng/algos-practice/tree/master/0295-find-median-from-data-stream) |
+## Graph
+|  |
+| ------- |
+| [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
 <!---LeetCode Topics End-->
