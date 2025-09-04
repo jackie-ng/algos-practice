@@ -29,6 +29,7 @@ initial commit
 | [0792-binary-search](https://github.com/jackie-ng/algos-practice/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
 | [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
+| [1036-rotting-oranges](https://github.com/jackie-ng/algos-practice/tree/master/1036-rotting-oranges) |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Hash Table
@@ -191,6 +192,7 @@ initial commit
 | ------- |
 | [0074-search-a-2d-matrix](https://github.com/jackie-ng/algos-practice/tree/master/0074-search-a-2d-matrix) |
 | [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
+| [1036-rotting-oranges](https://github.com/jackie-ng/algos-practice/tree/master/1036-rotting-oranges) |
 ## Monotonic Stack
 |  |
 | ------- |
@@ -263,6 +265,7 @@ initial commit
 | [0133-clone-graph](https://github.com/jackie-ng/algos-practice/tree/master/0133-clone-graph) |
 | [0323-number-of-connected-components-in-an-undirected-graph](https://github.com/jackie-ng/algos-practice/tree/master/0323-number-of-connected-components-in-an-undirected-graph) |
 | [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
+| [1036-rotting-oranges](https://github.com/jackie-ng/algos-practice/tree/master/1036-rotting-oranges) |
 ## Geometry
 |  |
 | ------- |
