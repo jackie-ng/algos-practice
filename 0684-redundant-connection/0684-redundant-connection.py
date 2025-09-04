@@ -1,28 +1,39 @@
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        root = [i for i in range(len(edges) + 1)]
-        rank = [1] * (len(edges) + 1)
-
-        def find(n):
-            if root[n] != n:
-                root[n] = find(root[n])
-            return root[n]
-
-        # return False if already unioned
-        def union(n1, n2):
-            r1, r2 = find(n1), find(n2) # find the root parent first
-
-            if r1 == r2:
-                return False 
-            if rank[r1] > rank[r2]: # r1 is the parent of r2
-                root[r2] = r1
-            else: # r2 is the parent of r1
-                root[r1] = r2
-                rank[r2] += 1
-                
-            return True
-
-        for n1, n2 in edges:
-            # print(n1, n2, "root", root, "rank", rank)
-            if not union(n1, n2):
-                return [n1, n2]
+        graph = defaultdict(list)
+        redundant = None
+        # key - a set
+        # key2 - a set2
+        # Recursive
+        def has_path(source, target, seen):
+            if source == target:
+                return True
+            seen.add(source)
+            for nei in graph[source]:
+                #if the node hasn't been visited and there's a path to target 
+                if nei not in seen and has_path(nei, target, seen):
+                    return True
+            return False
+        # # Iterative
+        # def has_path(src, dst):
+        #     if src == dst:
+        #         return True
+        #     stack = [src]
+        #     seen = {src}
+        #     while stack:
+        #         node = stack.pop()
+        #         if node == dst:
+        #             return True
+        #         for nei in graph[node]:
+        #             if nei not in seen:
+        #                 seen.add(nei)
+        #                 stack.append(nei)
+        #     return False
+        for u, v in edges:
+            # Before adding u-v, check if path exists → would form a cycle
+            if u in graph and v in graph and has_path(u, v, set()):
+                redundant = [u, v]
+            # Add edge to continue building full graph
+            graph[u].append(v)
+            graph[v].append(u)
+        return redundant
