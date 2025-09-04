@@ -1,68 +1,42 @@
-# class Solution:
-#     def validTree(self, n: int, edges: List[List[int]]) -> bool:
-#         if not n:
-#             return True
-        
-        # adj = { i:[] for i in range(n) }
-        # for n1, n2 in edges:
-        #     adj[n1].append(n2)
-        #     adj[n2].append(n1)
-            
-#         visit = set()
-#         def dfs(i, prev):
-#             if i in visit: # detect a loop
-#                 return False
-            
-#             visit.add(i)
-            
-#             for j in adj[i]:
-#                 if j == prev:
-#                     continue
-#                 if not dfs(j, i):
-#                     return False
-#             return True
-        
-#         return dfs(0, -1) and n == len(visit)
-                
-# alternative solution via DSU O(ElogV) time complexity and 
-# save some space as we don't recreate graph\tree into adjacency list prior dfs and loop over the edge list directly
-
-            
-    
 class Solution:
-
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
-        # Condition 1: The graph must contain n - 1 edges.
-        if len(edges) != n - 1: return False
+        # Must have exactly n-1 edges
+        if len(edges) > (n - 1):
+            return False
+        # Build adjacency list
+        adj = [[] for _ in range(n)]
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
         
-        root = [i for i in range(n)]
-        rank = [1] * n
-        count = n
-    
-        def find(x):
-            if x != root[x]:
-                root[x] = find(root[x])
-            return root[x]
+        seen = set()
+        ## Recusive
+        # def dfs(node, parent):
+        #     if node in seen:
+        #         return False
+            
+        #     seen.add(node)
+        #     for nei in adj[node]:
+        #         if nei == parent:
+        #             continue # ignore the edge back to parent
+        #         if not dfs(nei, node):
+        #             return False
+        #     return True
+        # # Start from 0 (if n >= 1)
+        # dfs(0, -1)
 
-        def union(x, y):
-            nonlocal count
-            rootX = find(x)
-            rootY = find(y)
-            if rank[rootX] > rank[rootY]:
-                root[rootY] = rootX 
-            elif rank[rootY] > rank[rootX]:
-                root[rootX] = rootY
-            else:
-                root[rootY] = rootX
-                rank[rootX] += 1
-            count -= 1
+        ## Iterative
+        stack = [(0, -1)]  # (node, parent)
 
-
-        # Add each edge. Check if a merge happened, because if it 
-        # didn't, there must be a cycle.
-        for e1, e2 in edges:
-            if find(e1) == find(e2):
-                return False
-            union(e1, e2)
-        # if there's only 1 root and no cycle => satisfy being a tree
-        return count == 1
+        while stack:
+            u, parent = stack.pop()
+            if u in seen:
+                continue
+            seen.add(u)
+            for v in adj[u]:
+                if v == parent:
+                    continue
+                if v not in seen:
+                    stack.append((v, u))
+        # Connected if we visited all nodes
+        return len(seen) == n
