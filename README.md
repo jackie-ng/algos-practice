@@ -31,6 +31,7 @@ initial commit
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
 | [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 | [1036-rotting-oranges](https://github.com/jackie-ng/algos-practice/tree/master/1036-rotting-oranges) |
+| [1325-path-with-maximum-probability](https://github.com/jackie-ng/algos-practice/tree/master/1325-path-with-maximum-probability) |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Hash Table
@@ -96,6 +97,7 @@ initial commit
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
 | [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
+| [1325-path-with-maximum-probability](https://github.com/jackie-ng/algos-practice/tree/master/1325-path-with-maximum-probability) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
 ## Bucket Sort
 |  |
@@ -292,8 +294,10 @@ initial commit
 | [0323-number-of-connected-components-in-an-undirected-graph](https://github.com/jackie-ng/algos-practice/tree/master/0323-number-of-connected-components-in-an-undirected-graph) |
 | [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
+| [1325-path-with-maximum-probability](https://github.com/jackie-ng/algos-practice/tree/master/1325-path-with-maximum-probability) |
 ## Shortest Path
 |  |
 | ------- |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
+| [1325-path-with-maximum-probability](https://github.com/jackie-ng/algos-practice/tree/master/1325-path-with-maximum-probability) |
 <!---LeetCode Topics End-->
