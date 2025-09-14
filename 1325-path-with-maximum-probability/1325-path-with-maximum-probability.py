@@ -19,19 +19,15 @@ class Solution:
             neg_prob, node = heapq.heappop(heap)
             prob = -neg_prob
             visited.add(node)
-
             # early exit: first time we pop 'end' is optimal
             if node == end:
                 return prob
-
             for nei, p in adj_list[node]:
-                if nei in visited:
-                    continue
-                np = prob * p
-                if np > best[nei]:
-                    best[nei] = np
-                    heapq.heappush(heap, (-np, nei))
-
+                if nei not in visited:
+                    np = prob * p
+                    if np > best[nei]:
+                        best[nei] = np
+                        heapq.heappush(heap, (-np, nei))
         return 0.0
 #         # Bellman Ford
 #         max_prob = [0] * n
