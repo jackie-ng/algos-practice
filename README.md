@@ -23,6 +23,7 @@ initial commit
 | [0300-longest-increasing-subsequence](https://github.com/jackie-ng/algos-practice/tree/master/0300-longest-increasing-subsequence) |
 | [0303-range-sum-query-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0303-range-sum-query-immutable) |
 | [0304-range-sum-query-2d-immutable](https://github.com/jackie-ng/algos-practice/tree/master/0304-range-sum-query-2d-immutable) |
+| [0322-coin-change](https://github.com/jackie-ng/algos-practice/tree/master/0322-coin-change) |
 | [0347-top-k-frequent-elements](https://github.com/jackie-ng/algos-practice/tree/master/0347-top-k-frequent-elements) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 | [0560-subarray-sum-equals-k](https://github.com/jackie-ng/algos-practice/tree/master/0560-subarray-sum-equals-k) |
@@ -223,6 +224,7 @@ initial commit
 |  |
 | ------- |
 | [0300-longest-increasing-subsequence](https://github.com/jackie-ng/algos-practice/tree/master/0300-longest-increasing-subsequence) |
+| [0322-coin-change](https://github.com/jackie-ng/algos-practice/tree/master/0322-coin-change) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
 ## Line Sweep
@@ -277,6 +279,7 @@ initial commit
 | [0133-clone-graph](https://github.com/jackie-ng/algos-practice/tree/master/0133-clone-graph) |
 | [0261-graph-valid-tree](https://github.com/jackie-ng/algos-practice/tree/master/0261-graph-valid-tree) |
 | [0286-walls-and-gates](https://github.com/jackie-ng/algos-practice/tree/master/0286-walls-and-gates) |
+| [0322-coin-change](https://github.com/jackie-ng/algos-practice/tree/master/0322-coin-change) |
 | [0323-number-of-connected-components-in-an-undirected-graph](https://github.com/jackie-ng/algos-practice/tree/master/0323-number-of-connected-components-in-an-undirected-graph) |
 | [0684-redundant-connection](https://github.com/jackie-ng/algos-practice/tree/master/0684-redundant-connection) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
