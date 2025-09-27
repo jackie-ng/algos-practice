@@ -1,40 +1,38 @@
+"""
+- for this question, we have to go through every character and check if its a valid palindromic substring:
+    we would have a helper function to check if its palindrome. 
+    but remember, we have to check even and odd length
+- then we would increment and check if its valid palidromic substring again until the end of the string
+"""
 class Solution:
-    def countSubstringsTabulation(self, s: str) -> int:
-        n = len(s)
-        dp = [[False] * n for _ in range(n)]
+    def countSubstrings(self, s):
+        if not s:
+            return 0
         ans = 0
-        
-        for i in range(n):
-            dp[i][i] = True
-        
-        count = n # each character is a palidromic substring by itself
-        
-        for i in range(n-1):
-            if s[i] == s[i+1]:
-                dp[i][i+1] = True
-                count += 1
-        
-        for length in range(2, n):
-            for i in range(n-length):
-                j = i+length
-                if s[i] == s[j] and dp[i+1][j-1]:
-                    dp[i][j] = True
-                    count += 1
-        
-        return count
-    
-    def countSubstrings(self, s: str) -> int:
-        count = 0
+        def expandCenter(i, j,s):
+            count = 0
+            while i >= 0 and j < len(s):
+                if s[i] != s[j]:
+                    return count
+                i-=1
+                j+=1
+                count+=1
+            return count
         for i in range(len(s)):
-            l = r = i
-            while l >= 0 and r < len(s) and s[l] == s[r]:
-                count += 1
-                l -= 1
-                r += 1
-            l = i
-            r = i + 1
-            while l >= 0 and r < len(s) and s[l] == s[r]:
-                count += 1
-                l -= 1
-                r += 1
-        return count
+            ans += expandCenter(i, i, s)
+            ans += expandCenter(i, i+1, s)
+        return ans
+
+
+
+
+
+
+        
+
+
+
+        # (s, i, i) for odd -> spread out to the left and right
+        # (s, i, i+1) for even -> spread out to the left and right
+#time complexity: O(N^2)
+#space complexity: O(N) because of the call stack?
