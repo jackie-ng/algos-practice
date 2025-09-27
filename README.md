@@ -78,6 +78,7 @@ initial commit
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/jackie-ng/algos-practice/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0005-longest-palindromic-substring](https://github.com/jackie-ng/algos-practice/tree/master/0005-longest-palindromic-substring) |
 | [0049-group-anagrams](https://github.com/jackie-ng/algos-practice/tree/master/0049-group-anagrams) |
 | [0125-valid-palindrome](https://github.com/jackie-ng/algos-practice/tree/master/0125-valid-palindrome) |
 | [0242-valid-anagram](https://github.com/jackie-ng/algos-practice/tree/master/0242-valid-anagram) |
@@ -146,6 +147,7 @@ initial commit
 ## Two Pointers
 |  |
 | ------- |
+| [0005-longest-palindromic-substring](https://github.com/jackie-ng/algos-practice/tree/master/0005-longest-palindromic-substring) |
 | [0011-container-with-most-water](https://github.com/jackie-ng/algos-practice/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/jackie-ng/algos-practice/tree/master/0015-3sum) |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/jackie-ng/algos-practice/tree/master/0019-remove-nth-node-from-end-of-list) |
@@ -226,6 +228,7 @@ initial commit
 ## Dynamic Programming
 |  |
 | ------- |
+| [0005-longest-palindromic-substring](https://github.com/jackie-ng/algos-practice/tree/master/0005-longest-palindromic-substring) |
 | [0300-longest-increasing-subsequence](https://github.com/jackie-ng/algos-practice/tree/master/0300-longest-increasing-subsequence) |
 | [0322-coin-change](https://github.com/jackie-ng/algos-practice/tree/master/0322-coin-change) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
