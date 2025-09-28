@@ -36,6 +36,7 @@ initial commit
 | [0907-koko-eating-bananas](https://github.com/jackie-ng/algos-practice/tree/master/0907-koko-eating-bananas) |
 | [1014-k-closest-points-to-origin](https://github.com/jackie-ng/algos-practice/tree/master/1014-k-closest-points-to-origin) |
 | [1036-rotting-oranges](https://github.com/jackie-ng/algos-practice/tree/master/1036-rotting-oranges) |
+| [1130-last-stone-weight-ii](https://github.com/jackie-ng/algos-practice/tree/master/1130-last-stone-weight-ii) |
 | [1325-path-with-maximum-probability](https://github.com/jackie-ng/algos-practice/tree/master/1325-path-with-maximum-probability) |
 | [1802-number-of-students-unable-to-eat-lunch](https://github.com/jackie-ng/algos-practice/tree/master/1802-number-of-students-unable-to-eat-lunch) |
 | [1977-minimum-interval-to-include-each-query](https://github.com/jackie-ng/algos-practice/tree/master/1977-minimum-interval-to-include-each-query) |
@@ -241,6 +242,7 @@ initial commit
 | [0518-coin-change-ii](https://github.com/jackie-ng/algos-practice/tree/master/0518-coin-change-ii) |
 | [0647-palindromic-substrings](https://github.com/jackie-ng/algos-practice/tree/master/0647-palindromic-substrings) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
+| [1130-last-stone-weight-ii](https://github.com/jackie-ng/algos-practice/tree/master/1130-last-stone-weight-ii) |
 ## Line Sweep
 |  |
 | ------- |
