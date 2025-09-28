@@ -84,6 +84,7 @@ initial commit
 | [0242-valid-anagram](https://github.com/jackie-ng/algos-practice/tree/master/0242-valid-anagram) |
 | [0424-longest-repeating-character-replacement](https://github.com/jackie-ng/algos-practice/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/jackie-ng/algos-practice/tree/master/0438-find-all-anagrams-in-a-string) |
+| [0516-longest-palindromic-subsequence](https://github.com/jackie-ng/algos-practice/tree/master/0516-longest-palindromic-subsequence) |
 | [0567-permutation-in-string](https://github.com/jackie-ng/algos-practice/tree/master/0567-permutation-in-string) |
 | [0647-palindromic-substrings](https://github.com/jackie-ng/algos-practice/tree/master/0647-palindromic-substrings) |
 | [1023-time-based-key-value-store](https://github.com/jackie-ng/algos-practice/tree/master/1023-time-based-key-value-store) |
@@ -232,6 +233,7 @@ initial commit
 | [0300-longest-increasing-subsequence](https://github.com/jackie-ng/algos-practice/tree/master/0300-longest-increasing-subsequence) |
 | [0322-coin-change](https://github.com/jackie-ng/algos-practice/tree/master/0322-coin-change) |
 | [0435-non-overlapping-intervals](https://github.com/jackie-ng/algos-practice/tree/master/0435-non-overlapping-intervals) |
+| [0516-longest-palindromic-subsequence](https://github.com/jackie-ng/algos-practice/tree/master/0516-longest-palindromic-subsequence) |
 | [0518-coin-change-ii](https://github.com/jackie-ng/algos-practice/tree/master/0518-coin-change-ii) |
 | [0647-palindromic-substrings](https://github.com/jackie-ng/algos-practice/tree/master/0647-palindromic-substrings) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
