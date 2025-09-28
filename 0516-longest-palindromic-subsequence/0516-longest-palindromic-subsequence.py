@@ -1,67 +1,40 @@
-# Time: O(n^2) Space: O(n^2) - For all three solutions
+"""
+If s[i] == s[j], then one valid palindrome is to take both ends plus the best inside: L(i,j) = 2 + L(i+1, j-1).
+
+Why correct: Any optimal palindromic subsequence either uses both these matching ends or it doesn't. If they match, taking both cannot make the best smaller because we can always place s[i] at the front and s[j] at the end of some palindrome inside s[i+1..j-1]. Hence at least 2 + L(i+1,j-1) is achievable. Optimality: any optimal palindrome that uses both ends has that form; if best does not use both ends, the next case covers it.
+
+If s[i] != s[j], then at least one of s[i] or s[j] is not used in any palindrome that uses the other as its mirror; so the optimal must lie in either s[i+1..j] or s[i..j-1]. Therefore:
+
+L(i,j) = max( L(i+1, j), L(i, j-1) ).
+
+
+Formal induction: For substrings shorter than current length, assume L is correct. The recurrence enumerates the two mutually exclusive cases (matching ends or not) and picks the best — therefore by induction it is correct.
+"""
 class Solution:
-    def longestPalindromeSubseq(self, s: str) -> int:   
-        # Dynamic Programming
-        dp = [ [0] * (len(s) + 1) for i in range(len(s) + 1)]
-        res = 0
-        
-        for i in range(len(s)):
-            for j in range(len(s) - 1, i - 1, -1): # s reversed
-                if s[i] == s[j]:
-                    dp[i][j] = 1 if i == j else 2 # i == j => each character is a palindrome itself
-                    if i >= 1:
-                        dp[i][j] += dp[i - 1][j + 1]
+    def longestPalindromeSubseq(self, s: str) -> int:
+        # n = len(s)
+        # @lru_cache(None)
+        # def L(i: int, j: int) -> int:
+        #     if i > j:
+        #         return 0
+        #     if i == j:
+        #         return 1
+        #     if s[i] == s[j]:
+        #         return 2 + L(i+1, j-1)
+        #     else:
+        #         return max(L(i+1, j), L(i, j-1))
+        # return L(0, n-1)
+        # ----------------------
+        n = len(s)
+        t = s[::-1]
+        # we will use two rows of length n+1
+        prev = [0] * (n + 1)
+        curr = [0] * (n + 1)
+        for i in range(1, n+1):
+            for j in range(1, n+1):
+                if s[i-1] == t[j-1]:
+                    curr[j] = prev[j-1] + 1
                 else:
-                    dp[i][j] = dp[i][j + 1]
-                    if i >= 1:
-                        dp[i][j] = max(dp[i][j], dp[i - 1][j])
-                res = max(res, dp[i][j])
-        return res
-
-
-#         # Memoization
-#         memo = {}
-        
-#         # (i, j) is start and end of the palindrome
-#         def dfs(i, j):
-#             # if i, j are out of bound
-#             if i < 0 or j == len(s):
-#                 return 0
-#             # if i, j are already memoized
-#             if (i, j) in memo:
-#                 return memo[(i, j)]
-            
-#             # if the palindrome is found, expand the length
-#             if s[i] == s[j]:
-#                 length = 1 if i == j else 2 # i == j => each character is a palindrome itself
-#                 memo[(i, j)] = length + dfs(i - 1, j + 1)
-#             else:
-#                 memo[(i, j)] = max(dfs(i - 1, j), dfs(i, j + 1))
-#             return memo[(i, j)]
-        
-#         for i in range(len(s)):
-#             dfs(i, i) # odd length
-#             dfs(i, i + 1) # even length
-
-#         return max(memo.values())
-    
-    
-        
-        
-# # LCS Solution
-# class Solution:
-#     def longestPalindromeSubseq(self, s: str) -> int:
-#         return self.longestCommonSubsequence(s, s[::-1])
-        
-    
-#     def longestCommonSubsequence(self, s1: str, s2: str) -> int:
-#         N, M = len(s1), len(s2)
-#         dp = [[0] * (M+1) for _ in range(N+1)]
-
-#         for i in range(N):
-#             for j in range(M):
-#                 if s1[i] == s2[j]:
-#                     dp[i+1][j+1] = 1 + dp[i][j]
-#                 else:
-#                     dp[i+1][j+1] = max(dp[i][j+1], dp[i+1][j])
-#         return dp[N][M]
+                    curr[j] = max(prev[j], curr[j-1])
+            prev, curr = curr, prev  # reuse arrays (swap roles)
+        return prev[n]
