@@ -91,6 +91,7 @@ initial commit
 | [0567-permutation-in-string](https://github.com/jackie-ng/algos-practice/tree/master/0567-permutation-in-string) |
 | [0647-palindromic-substrings](https://github.com/jackie-ng/algos-practice/tree/master/0647-palindromic-substrings) |
 | [1023-time-based-key-value-store](https://github.com/jackie-ng/algos-practice/tree/master/1023-time-based-key-value-store) |
+| [1170-shortest-common-supersequence](https://github.com/jackie-ng/algos-practice/tree/master/1170-shortest-common-supersequence) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -243,6 +244,7 @@ initial commit
 | [0647-palindromic-substrings](https://github.com/jackie-ng/algos-practice/tree/master/0647-palindromic-substrings) |
 | [0803-cheapest-flights-within-k-stops](https://github.com/jackie-ng/algos-practice/tree/master/0803-cheapest-flights-within-k-stops) |
 | [1130-last-stone-weight-ii](https://github.com/jackie-ng/algos-practice/tree/master/1130-last-stone-weight-ii) |
+| [1170-shortest-common-supersequence](https://github.com/jackie-ng/algos-practice/tree/master/1170-shortest-common-supersequence) |
 ## Line Sweep
 |  |
 | ------- |
